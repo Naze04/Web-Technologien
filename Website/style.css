@@ -1,0 +1,123 @@
+img {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    margin-top: -16px;
+    height: 100%;
+    font-family: Arial;
+}
+
+nav {
+    background: rgba(231, 220, 220, 0.8);
+    height: 40px;
+    width: 100%;
+}
+
+nav ul {/*display: flex;*/
+    text-align: center;
+}
+
+nav li {
+    list-style-type: none;
+    border: 5px solid rgba(0, 0, 0, 0.0);
+    display: inline-block;
+}
+
+nav a {
+    width: 274px;
+    height: 5px;
+    background-color: none;
+    text-decoration: none;
+    font-size: 16px;
+    color: #100f0f;
+}
+
+nav a:hover {color: aqua;}
+
+/*button:Orange {
+    border: 2px solid #ff6600;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 25px;
+}
+
+button:White {
+    border: 2px solid white;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 25px;
+}*/
+
+button:hover {
+    background-color: #ff781f;
+    border-color:#ff781f;
+    color: white;
+}
+
+.orange {
+    border: 2px solid #ff6600;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 25px;
+    background-color: #ff6600;
+    color: white;
+
+}
+
+.orange:hover {
+    background-color: #ff781f;
+    border-color:#ff781f;
+}
+
+.white{
+    border: 2px solid white;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 25px;
+    background-color: white;
+    color: black;
+}
+
+.orange:hover {
+    background-color: grey;
+    border-color:grey;
+}
+
+.clear {
+    background-color: rgba(0,0,0,0);
+}
+
+.parent {
+    position: relative;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.overlaying {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+}
