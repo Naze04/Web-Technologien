@@ -1,69 +1,78 @@
-img {
-    width: 100%;
-    height: 100%;
+div {
+    display: block;
 }
 
 body {
     margin: 0px;
     margin-top: -16px;
-    height: 100%;
+    height: auto;
     font-family: Arial;
 }
 
+/* nav leiste */
+
+*
+{
+  padding: 0;
+  margin: 0;
+}
+#logo {
+    height: 35px;
+}
 nav {
-    background: rgba(231, 220, 220, 0.8);
-    height: 40px;
+ width: 100%;
+     display: flex;
+  justify-content: center;
+
+    }
+ul {
+    list-style: none;
+    background: #F8F8F8;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+
+}
+
+ul li a {
+    display: block;
+    padding: 11px 25px;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+
+
+
+}
+
+ul li ul.dropdown li {
+    display: block;
+    width: 100%
+
+}
+
+ul li ul.dropdown {
     width: 100%;
+    background: #F8F8F8;
+    position: absolute;
+    z-index: 999;
+    display: none;
+    transition: all 0.5s ease-in-out;
+
 }
 
-nav ul {/*display: flex;*/
-    text-align: center;
+ul li a:hover {
+    background: #F8F8F8;
 }
 
-nav li {
-    list-style-type: none;
-    border: 5px solid rgba(0, 0, 0, 0.0);
-    display: inline-block;
+ul li:hover ul.dropdown {
+    display: block;
 }
 
-nav a {
-    width: 274px;
-    height: 5px;
-    background-color: none;
-    text-decoration: none;
-    font-size: 16px;
-    color: #100f0f;
-}
-
-nav a:hover {color: aqua;}
-
-/*button:Orange {
-    border: 2px solid #ff6600;
-    padding: 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 25px;
-}
-
-button:White {
-    border: 2px solid white;
-    padding: 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 25px;
-}*/
-
-button:hover {
-    background-color: #ff781f;
-    border-color:#ff781f;
-    color: white;
-}
+/* /navleiste */
 
 .orange {
     border: 2px solid #ff6600;
@@ -97,9 +106,9 @@ button:hover {
     color: black;
 }
 
-.orange:hover {
-    background-color: grey;
-    border-color:grey;
+.white:hover {
+    background-color: #ebeaea;
+    border-color: white;
 }
 
 .clear {
@@ -120,4 +129,58 @@ button:hover {
     width: 100%;
     position: absolute;
     text-align: center;
+}
+
+/* Stile für die Produktseite */
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+table th {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+/* Shop-Seite: Raster-Layout */
+.shop-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.shop-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.shop-item h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.shop-item p {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.shop-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
