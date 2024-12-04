@@ -4,68 +4,68 @@ div {
 
 body {
     margin: 0px;
-    margin-top: -16px;
     height: auto;
     font-family: Arial;
 }
 
+img {
+    height: auto;
+    width: 100%;
+}
+
 /* nav leiste */
 
-*
-{
+*{
   padding: 0;
   margin: 0;
 }
-#logo {
-    height: 35px;
-}
-nav {
- width: 100%;
-     display: flex;
-  justify-content: center;
 
-    }
-ul {
-    list-style: none;
+#logo {
+    height: 64px;
+}
+
+nav {
+    width: 100%;
     background: #F8F8F8;
 }
 
-ul li {
-    display: inline-block;
-    position: relative;
+ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
 
+ul li {
+    position: relative;
 }
 
 ul li a {
-    display: block;
-    padding: 11px 25px;
-    color: #000000;
+    color: black;
     text-decoration: none;
     text-align: center;
     font-size: 14px;
+}
 
+ul li a h4 {
+    padding: 25px;
+}
 
-
+ul li ul.dropdown {
+    width: 100%;
+    text-align: center;
+    background: #F8F8F8;
+    position: absolute;
+    display: none;
 }
 
 ul li ul.dropdown li {
     display: block;
     width: 100%
-
 }
 
-ul li ul.dropdown {
-    width: 100%;
-    background: #F8F8F8;
-    position: absolute;
-    z-index: 999;
-    display: none;
-    transition: all 0.5s ease-in-out;
-
-}
-
-ul li a:hover {
-    background: #F8F8F8;
+ul li ul.dropdown li a h5 {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 ul li:hover ul.dropdown {
@@ -73,9 +73,9 @@ ul li:hover ul.dropdown {
 }
 
 /* /navleiste */
-
-.orange {
-    border: 2px solid #ff6600;
+.white, .orange {
+    cursor: pointer;
+    border: 2px solid;
     padding: 12px;
     text-align: center;
     text-decoration: none;
@@ -83,27 +83,24 @@ ul li:hover ul.dropdown {
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 25px;
+}
+
+.orange {
+    border-color:#ff6600;
     background-color: #ff6600;
     color: white;
+}
 
+.white {
+    border-color: white;
+    background-color: white;
+    color: black;
 }
 
 .orange:hover {
     background-color: #ff781f;
     border-color:#ff781f;
-}
-
-.white{
-    border: 2px solid white;
-    padding: 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 25px;
-    background-color: white;
-    color: black;
+    color: white;
 }
 
 .white:hover {
@@ -183,4 +180,62 @@ table th {
     width: 100%;
     height: auto;
     border-radius: 10px;
+}
+
+
+/*product site*/
+.mainsection-left, .mainsection-right {
+    padding: 20px;
+    margin: auto;
+}
+
+.std-margin, .b-round {
+    margin: 20px;
+}
+
+.round,.b-round {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#left, #right {
+    margin: auto;
+}
+
+#left {
+    width: 50%;
+    text-align: left;
+}
+
+#right {
+    width: 50%;
+    text-align: right;
+}
+
+.mainsection-left {
+    min-width: 600px;
+    max-width: calc(100% - 400px);
+}
+
+.mainsection-right {
+    font-size: 12px;
+    width: 400px;
+}
+
+.row {
+    display: inline-flex;
+}
+
+.b-round {
+    padding: 20px;
+    display: flex;
+    border: 1px solid black;
+}
+
+.mid {
+    text-align: center;
+}
+
+.black {
+    color: black;
 }
