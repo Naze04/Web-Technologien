@@ -54,6 +54,7 @@ ul li ul.dropdown {
     width: 100%;
     text-align: center;
     background: #F8F8F8;
+    z-index: 999;
     position: absolute;
     display: none;
 }
@@ -72,7 +73,7 @@ ul li:hover ul.dropdown {
     display: block;
 }
 
-/* /navleiste */
+/* /homeseite */
 .white, .orange {
     cursor: pointer;
     border: 2px solid;
@@ -128,20 +129,6 @@ ul li:hover ul.dropdown {
     text-align: center;
 }
 
-/* Stile für die Produktseite */
-table {
-    font-family: Arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 20px;
-}
-
-table th, table td {
-    border: 1px solid #ddd;
-    text-align: left;
-    padding: 8px;
-}
-
 table th {
     background-color: #f2f2f2;
     color: black;
@@ -182,7 +169,6 @@ table th {
     border-radius: 10px;
 }
 
-
 /*product site*/
 .mainsection-left, .mainsection-right {
     padding: 20px;
@@ -198,16 +184,16 @@ table th {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#left, #right {
+.left, .right {
     margin: auto;
 }
 
-#left {
+.left {
     width: 50%;
     text-align: left;
 }
 
-#right {
+.right {
     width: 50%;
     text-align: right;
 }
@@ -238,4 +224,17 @@ table th {
 
 .black {
     color: black;
+}
+
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
 }

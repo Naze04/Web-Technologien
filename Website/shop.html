@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
     <head>
         <title>OPhone Shop</title>
         <link rel="stylesheet" href="style.css" type="text/css">
+        <meta charset="UTF-8">
     </head>
     <body>
         <!--Nav Bar-->
         <nav>
             <ul>
                 <li>
-                    <a href="index.html"><img src=orange_logo.png id="logo"></a>
+                    <a href="index.html"><img alt="Logo" src=orange_logo.png id="logo"></a>
                     <ul class="dropdown">
                         <li><a href="PLACEHOLDER"><h5>1</h5></a></li>
                         <li><a href="PLACEHOLDER"><h5>2</h5></a></li>
@@ -17,9 +18,9 @@
                         <li><a href="PLACEHOLDER"><h5>4</h5></a></li>
                     </ul>
                 </li>
-                <li><a href="index.html"><h4>Home</h1></a></li>
-                <li><a href="PLACEHOLDER"><h4>Mac</h1></a></li>
-                <li><a href="OPhone.html"><h4>OPhone</h1></a></li>
+                <li><a href="OPhone.html"><h4>OPhone</h4></a></li>
+                <li><a href="OWatch.html"><h4>OWatch</h4></a></li>
+                <li><a href="EarthPods.html"><h4>EarthPods</h4></a></li>
             </ul>
         </nav>
     
@@ -42,7 +43,7 @@
                 <img src="OWatch.jpg" alt="OWatch" class="shop-img">
                 <h2>OWatch</h2>
                 <p>Die perfekte Ergänzung für Ihren Alltag.</p>
-                <button class="orange">Jetzt kaufen</button>                    <!--buttons wie in index.html machen-->
+                <button onclick="location.href='OWatch.html'" type="button" class="orange">Jetzt kaufen</button>
             </div>
         
             <!-- Produkt 3 -->
@@ -50,7 +51,7 @@
                 <img src="EarthPods.jpg" alt="O-Audio EarthPods" class="shop-img">
                 <h2>O-Audio EarthPods</h2>
                 <p>Kristallklarer Klang, kabellose Freiheit.</p>
-                <button class="orange">Jetzt kaufen</button>
+                <button onclick="location.href='EarthPods.html'" type="button" class="orange">Jetzt kaufen</button>
             </div>
         </div>
     </body>
