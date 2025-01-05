@@ -3,9 +3,9 @@ function onLoad() {
 }
 
 function loadNav() {
-    document.getElementById("nav").innerHTML = '<ul>\
+    document.getElementById("nav").innerHTML = '<ul class="menu">\
                 <li>\
-                    <a href="home.html"><img alt="Logo" src=../assets/orange_logo.png id="logo"></a>\
+                    <a href="home.html"><img alt="Logo" src=../assets/orange_logo.png class="logo"></a>\
                     <ul class="dropdown">\
                         <li><a href="PLACEHOLDER"><h5>1</h5></a></li>\
                         <li><a href="PLACEHOLDER"><h5>2</h5></a></li>\
