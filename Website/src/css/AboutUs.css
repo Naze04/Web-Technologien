@@ -1,0 +1,129 @@
+body {
+	background-attachment: scroll; background-image: url(Bilder/hintergrund.png);
+	background-size: cover;
+    font-family: Arial;
+}
+
+#rahmen {
+	width: 1080px;
+	margin: 0 auto;
+}
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 200px;
+}
+
+header {
+	background: rgba(0, 0, 0, 0.75);
+	height:auto;
+	width: 1080px;
+}
+
+
+.Uberschriftlinks {
+    text-decoration: none;
+    color: orange;
+}
+
+.Uberschriftlinkswhite {
+	text-decoration: none;
+	color: white;
+}
+
+#Inhalt {
+    background: rgba(0, 0, 0, 0.5)   
+}
+
+.Texthintergrund {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-right: auto;
+    padding-left: 5px;
+    padding-bottom: 15px;
+    width: auto;
+}
+
+.Beschreibung {
+    max-width: 400px;
+    color: white;
+    margin-left: 20px;
+    
+}
+
+.Bilder {
+    margin-left: 50px; 
+    width: 400px;
+    height: auto;
+    vertical-align: middle;
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+footer { 
+    color: white; 
+	background: rgba(0, 0, 0, 0.75);
+	height: 325px;
+	width: 1080px;
+}
+
+.Impressum {
+	width: 250px;
+	display: flex;
+	justify-content: center;
+    float: left;
+    padding: 10px;
+    opacity: 1.00;
+    font-family: Arial;
+}
+
+#Impressumtext {
+	padding-top: 20px;
+	margin-left: 20px;
+}
+
+.textbild {display: flex;}
+
+section {
+	width: 600px;
+}
+
+article {
+	min-height: 300px;
+}
+
+h2 {background: rgba(0, 0, 0, 0.5);
+	color: white;
+	font-size: 65px;
+	max-height: 100px;
+    max-width: 425px;
+}
+
+.Uberschrift {
+    background: rgba(0, 0, 0, 0.5);
+	color: white;
+	font-size: 65px;
+	max-height: 100px;
+    max-width: 425px;   
+}
+
+.Uberschrifthalfte {
+    color: orange;
+}
+
+#Kontaktlink {
+    text-decoration: none;
+    color: white;
+}
+
+#Newsletterlink {
+    text-decoration: none;
+    color: white;
+}
+
+#FAQlink {
+	text-decoration: none;
+	color: white;
+}
