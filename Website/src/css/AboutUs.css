@@ -84,7 +84,9 @@ footer {
 	margin-left: 20px;
 }
 
-.textbild {display: flex;}
+.textbild {
+    display: flex;
+}
 
 section {
 	width: 600px;
