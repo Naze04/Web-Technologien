@@ -1,0 +1,122 @@
+/* Globale Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Container für das Formular */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: #ff6600;
+}
+
+/* Logo */
+#logo {
+    height: auto;
+    width: 80px;
+    vertical-align: middle;
+}
+
+/* Formular-Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, select {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e55a00;
+}
+
+/* Zusammenfassungs-Sektion */
+.summary {
+    margin-top: 30px;
+    padding: 15px;
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.summary h2 {
+    margin-top: 0;
+}
+
+.summary p {
+    margin: 5px 0;
+}
+
+/* Buttons: .white und .orange */
+.white, .orange {
+    cursor: pointer;
+    border: 2px solid;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 25px;
+}
+
+.orange {
+    border-color: #ff6600;
+    background-color: #ff6600;
+    color: white;
+}
+
+.white {
+    border-color: white;
+    background-color: white;
+    color: black;
+}
+
+.orange:hover {
+    background-color: #ff781f;
+    border-color: #ff781f;
+    color: white;
+}
+
+.white:hover {
+    background-color: #ebeaea;
+    border-color: white;
+}
+
+/* Tabelle  (falls später benutzt) */
+table th {
+    background-color: #f2f2f2;
+    color: black;
+}

@@ -1,0 +1,67 @@
+/* nav leiste */
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    height: 63px;
+}
+
+nav {
+    width: 100%;
+    background: #F8F8F8;
+}
+
+.menu {
+    justify-content: center;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    a {
+        color: black;
+        text-decoration: none;
+        font-size: 14px;
+        display: block;
+
+        h4 {
+            padding: 25px;
+        }
+
+        h5 {
+            padding: 10px;
+        }
+      
+        &:hover {
+            background-color: #dedede;
+        }
+    }
+    
+    li {
+        display: block;
+        position: relative;
+    }
+
+    li:hover .dropdown {
+        clip: auto;
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+.dropdown {
+    list-style: none;
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    background: #F8F8F8;
+    z-index: 999;
+
+    clip: rect(1px, 1px, 1px, 1px);
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+}
