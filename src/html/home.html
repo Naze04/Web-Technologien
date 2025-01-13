@@ -3,71 +3,70 @@
     <head>
         <title>Orange Inc product Html</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/style.css" type="text/css">
         <link rel="stylesheet" href="../css/nav.css" type="text/css">
+        <link rel="stylesheet" href="../css/home.css" type="text/css">
         <script src="../js/script.js"></script>
     </head>
     <body onload="onLoad()">
         <!--Nav Bar-->
         <nav id="nav"></nav>
 
-        <!--1. Banner-->
-        <section>
-            <div class="parent" style="height: 600px;">
-                <div class="background">
-                    <a href="PLACEHOLDER">
-                        <img alt="Ophone" src="../assets/Ophone_liegend.png" style="padding-bottom: 10px;">
-                    </a>
-                </div>
-                <div class="overlaying">
-                    <h1 style="color: white;">OPhone 16 Pro</h1>
-                    <button onclick="location.href='shop.html'" type="button" class="orange">Weitere Infos</button>
-                    <button onclick="location.href='oPhone.html'" type="button" class="orange clear">Kaufen</button>
-                </div>
+        <div class="FlexImg" style="position: relative;">
+            <div style="position: absolute;">
+                <a href="PLACEHOLDER.html">
+                <img class="img" src="../assets/Ophone_banner.jpg" alt="Ophone">
+                </a>
             </div>
-        </section>
-        <!--2. Banner-->
-        <section>
-            <div class="parent" style="height: 600px;">
-                <div class="background">
-                    <a href="PLACEHOLDER"><img alt="OPhone" src="../assets/Ophone_liegend.png"></a>
-                </div>
-                <div class="overlaying">
-                    <h1 style="color: white;">OPhone 16 Pro</h1>
-                    <button onclick="location.href='PLACEHOLDER'" type="button" class="white">Weitere Infos</button>
-                    <button onclick="location.href='PLACEHOLDER'" type="button" class="white clear">Kaufen</button>
-                </div>
+            <div style="position: absolute; text-align: center;">
+                <h1 style="color: black; padding: 20px;">Das OPhone</h1>
+                <button onclick="location.href='shop.html'" class="orange" style="color: white;">Weitere Infos</button>
+                <button onclick="location.href='Ophone.html'" class="orange clearOrange">Kaufen</button>
             </div>
-        </section>
-        <!--3. Banner-->
-        <section>
-            <div class="parent" style="height: 600px;">
-                <div class="background">
-                    <a href="PLACEHOLDER"><img alt="OPhone" src="../assets/Ophone_liegend.png"></a>
-                </div>
-                <!--button-->
-                <div class="overlaying">
-                    <h1 style="color: white;">OPhone 16 Pro</h1>
-                    <button onclick="location.href='PLACEHOLDER'" type="button" class="orange">Weitere Infos</button>
-                    <button onclick="location.href='PLACEHOLDER'" type="button" class="orange clear">Kaufen</button>
-                </div>
+        </div>
+
+        <div class="FlexImg" style="position: relative;">
+            <div style="position: absolute;">
+                <a href="PLACEHOLDER.html">
+                <img class="img" src="../assets/OWatch_banner.jpg" alt="OWatch">
+                </a>
             </div>
-        </section>
-        <!--Parralel Bilder-->
-        <section>
-            <div class="parent">
-                <div class="background">
-                    <a href="PLACEHOLDER">
-                        <img alt="Test" src="../assets/Test.png" style="width: auto; padding-left: 12px; padding-right: 12px;">    <!--kann man wahrschienlich besser machen-->
-                        <img alt="Test" src="../assets/Test.png" style="width: auto;">
-                    </a>
-                </div>
+            <div style="position: absolute; text-align: center;">
+                <h1 style="color: white; padding: 20px">Die OWatch</h1>
+                <button onclick="location.href='shop.html'" class="white">Weitere Infos</button>
+                <button onclick="location.href='Ophone.html'" class="white clearWhite">Kaufen</button>
             </div>
-            <div class="overlaying">
-                <h1 style="color: white; position: relative;">OPhone 16 Pro</h1>
-                <button onclick="location.href='PLACEHOLDER'" type="button" class="orange">Weitere Infos</button>
-                <button onclick="location.href='PLACEHOLDER'" type="button" class="orange clear">Kaufen</button>
+        </div>
+
+        <div class="FlexImg" style="position: relative;">
+            <div style="position: absolute;">
+                <a href="PLACEHOLDER.html">
+                <img class="img" src="../assets/Earthpod_banner.jpg" alt="Earthpods">
+                </a>
             </div>
-        </section>
+            <div style="position: absolute; text-align: center;">
+                <h1 style="color: black; padding: 20px">Die Earthpods</h1>
+                <button onclick="location.href='shop.html'" class="orange" style="color: white;">Weitere Infos</button>
+                <button onclick="location.href='Ophone.html'" class="orange clearOrange">Kaufen</button>
+            </div>
+        </div>
+
+
+        <div id="slider-container">
+            <div id="slider">
+                <div class="card"><img src="../assets/silly_guy.jpg"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg"></div>
+            </div>
+        <button id="prev-btn">❮</button>
+        <button id="next-btn">❯</button>
+        </div>
+        
     </body>
 </html>
