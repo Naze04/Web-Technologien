@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="de">
     <head>
-        <title>OPhone Produktseite</title>
+        <title>Orange Inc product Html</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../css/style.css" type="text/css">
-        <link rel="stylesheet" href="../css/nav.css" type="text/css">
         <link rel="stylesheet" href="../css/product.css" type="text/css">
-        <script src="../js/script.js"></script>
     </head>
-    <body onload="onLoad()">
+    <body>
         <!--Nav Bar-->
-        <nav id="nav"></nav>
+        <?php include ('nav.php'); ?>
 
         <!--Product-->
         <h3 style="color: orangered;">Neu</h3>
-        <h1>Apple Watch Series 10 kaufen</h1>
+        <h1>OPhone 16 Pro kaufen</h1>
         <div class="row">
             <section class="mainsection-left">
-                <img class="round" src="../assets/OWatchBig.jpg" alt="OWatch">
+                <img class="round" src="../assets/OphonePro.jpg" alt="O-Phone">
             </section>
             <!--Product description-->
             <section class="mainsection-right">
-                <h1 class="std-margin">Gehäuse. <span style="color: gray">Los geht's mit Material und Finish.</span></h1>
+                <h1 class="std-margin">Modell. <span style="color: gray">Welches ist das richtige Modell für dich?</span></h1>
                 <!--Product selection-->
                 <section class="b-round">
                     <div class="left">
-                        <h3>Aluminium</h3>
-                        Mit GPS oder GPS + Cellular
+                        <h3>OPhone 16 Pro</h3>
+                        6,3" Display
                     </div>
                     <div class="right">
-                        Ab 449 €<br>
-                        oder 19,19 €/Rate bei<br>
-                        24 Raten mit 2,5 %<br>
+                        Ab 1.199 €<br>
+                        oder 49,96 €/Rate<br>
+                        bei 24 Raten mit 0 %<br>
                         eff. Zins p.a.****
                     </div>
                 </section>
                 <section class="b-round">
                     <div class="left">
-                        <h3>Titan</h3>
-                        Mit GPS + Cellular
+                        <h3>OPhone 16 Pro Max</h3>
+                        6,9" Display
                     </div>
                     <div class="right">
-                        Ab 799 €<br>
-                        oder 34,15 €/Rate bei<br>
-                        24 Raten mit 2,5 %<br>
+                        Ab 1.449 €<br>
+                        oder 60,38 €/Rate<br>
+                        bei 24 Raten mit 0 %<br>
                         eff. Zins p.a.****
                     </div>
                 </section>
@@ -92,5 +90,6 @@
                 </tr>
             </table>
         </div>
+		<?php include ('footer.php'); ?>
     </body>
 </html>

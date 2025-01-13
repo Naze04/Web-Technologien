@@ -4,13 +4,11 @@
         <title>OPhone Shop</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../css/style.css" type="text/css">
-        <link rel="stylesheet" href="../css/nav.css" type="text/css">
         <link rel="stylesheet" href="../css/shop.css" type="text/css">
-        <script src="../js/script.js"></script>
     </head>
-    <body onload="onLoad()">
+    <body>
         <!--Nav Bar-->
-        <nav id="nav"></nav>
+        <?php include ('nav.php'); ?>
     
         <div style="padding: 20px; text-align: center;">
             <h1>Willkommen im OPhone Shop</h1>
@@ -23,7 +21,7 @@
                 <img src="../assets/OPhone16.jpg" alt="OPhone 16 Pro" class="shop-img">
                 <h2>OPhone 16 Pro</h2>
                 <p>Erleben Sie die Zukunft der Technologie.</p>
-                <button onclick="location.href='Ophone.html'" type="button" class="orange">Jetzt kaufen</button>        
+                <button onclick="location.href='Ophone.php'" type="button" class="orange">Jetzt kaufen</button>        
             </div>
         
             <!-- Produkt 2 -->
@@ -31,7 +29,7 @@
                 <img src="../assets/OWatch.jpg" alt="OWatch" class="shop-img">
                 <h2>OWatch</h2>
                 <p>Die perfekte Ergänzung für Ihren Alltag.</p>
-                <button onclick="location.href='OWatch.html'" type="button" class="orange">Jetzt kaufen</button>
+                <button onclick="location.href='OWatch.php'" type="button" class="orange">Jetzt kaufen</button>
             </div>
         
             <!-- Produkt 3 -->
@@ -39,8 +37,9 @@
                 <img src="../assets/EarthPods.jpg" alt="O-Audio EarthPods" class="shop-img">
                 <h2>O-Audio EarthPods</h2>
                 <p>Kristallklarer Klang, kabellose Freiheit.</p>
-                <button onclick="location.href='EarthPods.html'" type="button" class="orange">Jetzt kaufen</button>
+                <button onclick="location.href='EarthPods.php'" type="button" class="orange">Jetzt kaufen</button>
             </div>
         </div>
+		<?php include ('footer.php'); ?>
     </body>
 </html>
