@@ -4,13 +4,11 @@
         <title>OPhone Produktseite</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../css/style.css" type="text/css">
-        <link rel="stylesheet" href="../css/nav.css" type="text/css">
         <link rel="stylesheet" href="../css/product.css" type="text/css">
-        <script src="../js/script.js"></script>
     </head>
-    <body onload="onLoad()">
+    <body>
         <!--Nav Bar-->
-        <nav id="nav"></nav>
+        <?php include ('nav.php'); ?>
 
         <!--Product-->
         <h3 style="color: orangered;">Kostenlose Gravur</h3>
@@ -92,5 +90,6 @@
                 </tr>
             </table>
         </div>
+		<?php include ('footer.php'); ?>
     </body>
 </html>

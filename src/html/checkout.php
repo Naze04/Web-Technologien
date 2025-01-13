@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orange Shop - Checkout</title>
     <link rel="stylesheet" href="../css/checkout.css" type="text/css">
-    <link rel="stylesheet" href="../css/nav.css" type="text/css">
-    <script src="../js/script.js"></script>
-</head>
-<body onload="onLoad()">
-    <!--Nav Bar-->
-    <nav id="nav"></nav>
-
+    </head>
+    <body>
+        <!--Nav Bar-->
+        <?php include ('nav.php'); ?>
+        
     <!-- Checkout Form -->
     <div class="container">
         <h1>Orange Shop - Checkout</h1>
@@ -85,5 +83,6 @@
             alert('Ihre Bestellung wurde erfolgreich aufgeben!');
         });
     </script>
+	<?php include ('footer.php'); ?>
 </body>
 </html>

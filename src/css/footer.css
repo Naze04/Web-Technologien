@@ -1,0 +1,36 @@
+footer { 
+    color: white; 
+	background: rgba(0, 0, 0, 0.75);
+	height: 325px;
+	width: 100%;
+}
+
+.Impressum {
+	width: 250px;
+	display: flex;
+	justify-content: center;
+    float: left;
+    padding: 10px;
+    opacity: 1.00;
+    font-family: Arial;
+}
+
+#Impressumtext {
+	padding-top: 20px;
+	margin-left: 20px;
+}
+
+#Kontaktlink {
+    text-decoration: none;
+    color: white;
+}
+
+#Newsletterlink {
+    text-decoration: none;
+    color: white;
+}
+
+#FAQlink {
+	text-decoration: none;
+	color: white;
+}
