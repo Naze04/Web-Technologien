@@ -57,7 +57,7 @@ nav {
     background: #F8F8F8;
     z-index: 999;
 
-    clip: rect(1px, 1px, 1px, 1px);
+    clip: auto;
     opacity: 0;
     transform: scaleY(0);
     transform-origin: top;
