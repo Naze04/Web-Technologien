@@ -3,34 +3,25 @@ footer {
 	background: rgba(0, 0, 0, 0.75);
 	height: 325px;
 	width: 100%;
-}
-
-.Impressum {
-	width: 250px;
-	display: flex;
-	justify-content: center;
-    float: left;
-    padding: 10px;
-    opacity: 1.00;
     font-family: Arial;
-}
-
-#Impressumtext {
-	padding-top: 20px;
-	margin-left: 20px;
-}
-
-#Kontaktlink {
-    text-decoration: none;
-    color: white;
-}
-
-#Newsletterlink {
-    text-decoration: none;
-    color: white;
-}
-
-#FAQlink {
 	text-decoration: none;
+}
+
+.footerTable {
+	margin: auto;
+}
+
+.fTHead {
+	width: 250px;
+	height: 50px;
+	text-align: center;
+}
+
+.fTbody {
+	text-align: center;
+}
+
+.footerLink {
+    text-decoration: none;
 	color: white;
 }
