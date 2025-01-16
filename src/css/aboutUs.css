@@ -4,12 +4,12 @@ body {
     font-family: Arial;
 }
 
-#rahmen {
+.rahmen {
 	width: 1080px;
 	margin: 0 auto;
 }
 
-#logo {
+.logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -34,7 +34,7 @@ header {
 	color: white;
 }
 
-#Inhalt {
+.Inhalt {
     background: rgba(0, 0, 0, 0.5)   
 }
 

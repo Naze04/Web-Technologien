@@ -62,8 +62,8 @@
                 <div class="card"><img src="../assets/silly_guy.jpg"></div>
                 <div class="card"><img src="../assets/silly_guy.jpg"></div>
             </div>
-        <button id="prev-btn">❮</button>
-        <button id="next-btn">❯</button>
+            <button id="prev-btn">❮</button>
+            <button id="next-btn">❯</button>
         </div>
 		<?php include ('footer.php'); ?>
     </body>
