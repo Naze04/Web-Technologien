@@ -11,33 +11,33 @@
 nav {
     width: 100%;
     background: #F8F8F8;
-}
-
-.menu {
-    justify-content: center;
     display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    
+
     a {
         color: black;
         text-decoration: none;
         font-size: 14px;
         display: block;
 
-        h4 {
-            padding: 25px;
-        }
-
-        h5 {
-            padding: 10px;
-        }
-      
         &:hover {
             background-color: #dedede;
         }
     }
+
+    h4 {
+        padding: 25px;
+    }
+
+    h5 {
+        padding: 10px;
+    }
+}
+
+.menu {
+    justify-content: center;
+    display: flex;
+    list-style: none;
+    width: 100%;
     
     li {
         display: block;
@@ -51,7 +51,7 @@ nav {
     }
 }
 
-.dropdown, #logindropdown {
+.dropdown, #logindropdown, #profiledropdown {
     list-style: none;
     position: fixed;
     background: #F8F8F8;
@@ -69,7 +69,7 @@ nav {
     width: 100vw;
 }
 
-#logindropdown {
+#logindropdown, #profiledropdown {
     right: 0;
     width: 300px;
 }

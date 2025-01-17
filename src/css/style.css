@@ -1,16 +1,7 @@
-div {
-    display: block;
-}
-
 body {
     margin: 0px;
     height: auto;
     font-family: Arial;
-}
-
-img {
-    height: auto;
-    width: 100%;
 }
 
 /* /homeseite */
@@ -41,7 +32,6 @@ img {
 .orange:hover {
     background-color: #ff781f;
     border-color:#ff781f;
-    color: white;
 }
 
 .white:hover {
@@ -67,9 +57,4 @@ img {
     width: 100%;
     position: absolute;
     text-align: center;
-}
-
-table th {
-    background-color: #f2f2f2;
-    color: black;
 }

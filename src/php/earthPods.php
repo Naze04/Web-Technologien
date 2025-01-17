@@ -3,7 +3,6 @@
     <head>
         <title>OPhone Produktseite</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/style.css" type="text/css">
         <link rel="stylesheet" href="../css/product.css" type="text/css">
     </head>
     <body>
@@ -11,7 +10,7 @@
         <?php include ('nav.php'); ?>
 
         <!--Product-->
-        <h3 style="color: orangered;">Kostenlose Gravur</h3>
+        <h3 class="orangered">Kostenlose Gravur</h3>
         <h1>EarthPods 4 kaufen</h1>
         <div class="row">
             <section class="mainsection-left">
@@ -65,28 +64,28 @@
         </div>
         
         <!--Information-->
-        <div style="padding: 20px; text-align: center;">
+        <div class="information">
             <h2>Technische Details</h2>
-            <table style="margin: auto; border-collapse: collapse; width: 80%;">
+            <table class="informationtb">
                 <tr>
-                    <th style="border: 1px solid #ddd; padding: 8px;">Feature</th>
-                    <th style="border: 1px solid #ddd; padding: 8px;">Beschreibung</th>
+                    <th>Feature</th>
+                    <th>Beschreibung</th>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Display</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">6.7 Zoll Super Retina XDR</td>
+                    <td>Display</td>
+                    <td>6.7 Zoll Super Retina XDR</td>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Prozessor</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">A16 Bionic Chip</td>
+                    <td>Prozessor</td>
+                    <td>A16 Bionic Chip</td>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Kamera</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Triple-Kamera-System mit 48 MP</td>
+                    <td>Kamera</td>
+                    <td>Triple-Kamera-System mit 48 MP</td>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Batterielaufzeit</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Bis zu 28 Stunden</td>
+                    <td>Batterielaufzeit</td>
+                    <td>Bis zu 28 Stunden</td>
                 </tr>
             </table>
         </div>

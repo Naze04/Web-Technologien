@@ -48,10 +48,31 @@
                 <li><a href="PLACEHOLDER"><h5>3</h5></a></li>
                 <li><a href="PLACEHOLDER"><h5>4</h5></a></li>
             </ul>
-        </li>
-        <li>
-            <a class="login" onclick="onLoginClick()"><h4>Login</h4></a>
+        </li>   
+        <li  class="login">
+            <a onclick="onLoginClick()"><h4>Login</h4></a>
             <ul id="logindropdown">
+                <form action="action_page.php" method="post" class="loginform">
+                    <div class="imgcontainer">
+                        <img src="../assets/silly_guy.jpg" alt="Avatar" class="avatar">
+                    </div>
+                    <div class="container">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+                        <button type="submit" class="loginbtn">Login</button>
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember">Remember me
+                        </label>
+                    </div>
+                    <div class="container">
+                        <button type="button" class="cancelbtn">Cancel</button>
+                        <span class="psw"><a href="#">Forgot password?</a></span>
+                    </div>
+                </form>
+            </ul>
+            <ul id="profiledropdown">
                 <form action="action_page.php" method="post" class="loginform">
                     <div class="imgcontainer">
                         <img src="../assets/silly_guy.jpg" alt="Avatar" class="avatar">
