@@ -3,251 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orange Shop - Checkout</title>
+    <title>Orange Shop - Kasse</title>
     <link rel="stylesheet" href="../css/checkout.css" type="text/css">
     <link rel="stylesheet" href="../css/nav.css" type="text/css">
     <script src="../js/script.js"></script>
 </head>
-<body onload="onLoad()">
-    <!--Navigations-Leiste-->
-    <nav id="nav"></nav>
-
-    <!-- Checkout-Formular-->
+<body onload="initializePage()">
+    <!-- Navigationsleiste -->
+    <nav id="navigation"></nav>
+   
+    <!-- Kassenformular -->
     <div class="container">
         <h1>Orange Shop - Checkout</h1>
-
-        <form id="checkoutForm">
-            <label for="name">Vor- und Nachname</label>
-            <input type="text" id="name" name="name" placeholder="Geben Sie Ihren Vor- und Nachnamen ein" required>
-
-            <label for="email">E-Mail-Addresse</label>
-            <input type="email" id="email" name="email" placeholder="Geben Sie Ihre E-Mail-Adresse ein" required>
-
-            <label for="phone">Telefonnummer</label>
-            <input type="tel" id="phone" name="phone" placeholder="Geben Sie Ihre Telefonnummer ein" required>
-
-            <label for="address">Versandaddresse</label>
-            <input type="text" id="address" name="address" placeholder="Geben Sie Ihre Lieferadresse ein" required>
-
-            <label for="model">Wähle Gerät</label>
-            <select id="model" name="model" required>
-                <option value="">--Wähle Gerät--</option>
-                <option value="orange-x1">Orange X1 - €699</option>
-                <option value="orange-pro">Orange Pro - €899</option>
-                <option value="orange-ultra">Orange Ultra - €1099</option>
-            </select>
-
-            <label for="quantity">Anzahl</label>
-            <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
-
-            <div class="summary" id="orderSummary">
-                <h2>Bestellübersicht</h2>
-                <p><strong>Modell:</strong> <span id="summaryModel">Nichts ausgewählt</span></p>
-                <p><strong>Menge:</strong> <span id="summaryQuantity">1</span></p>
     
+        <form id="checkoutForm">
+            <label for="kundeName">Name</label>
+            <input type="text" id="kundeName" name="kundeName" placeholder="Vor- und Nachname eingeben" required>
+    
+            <label for="email">E-Mail-Adresse</label>
+            <input type="email" id="email" name="email" placeholder="E-Mail-Adresse eingeben" required>
+    
+            <label for="telefon">Telefonnummer</label>
+            <input type="tel" id="telefon" name="telefon" placeholder="Telefonnummer eingeben" required>
+    
+            <label for="adresse">Lieferadresse</label>
+            <input type="text" id="adresse" name="adresse" placeholder="Adresse eingeben" required>
+    
+            <label for="produktModell">Gerät auswählen</label>
+            <select id="produktModell" name="produktModell" required>
+                <option value="">--Gerät wählen--</option>
+                <option value="orange-x1">Orange X1 - €699</option>
+                <option value="orange-pro">Orange Pro - €899 </option>
+                <option value="orange-ultra">Orange Ultra - e1099 €</option>
+            </select>
+    
+            <label for="produktMenge">Menge</label>
+            <input type="number" id="produktMenge" name="produktMenge" min="1" max="10" value="1" required>
+    
+            <div class="bestellübersicht" id="bestellÜbersicht">
+                <h2>Bestellübersicht</h2>
+                <p id="zusammenfassungModell">Gerät: -</p>
+                <p id="zusammenfassungMenge">Menge: -</p>
+                <p id="zusammenfassungGesamt">Gesamtpreis: €0,00</p>
+            </div>
+        </form>
+    
+        <button type="button" id="zumWarenkorbButton">Zum Warenkorb hinzufügen</button>
+        <button type="submit">Bestellung absenden</button>
+    </div>
+    
+    <!-- Warenkorb -->
+    <div class="cart">
+        <table>
+            <thead>
+                <tr>
+                    <th>Produkt</th>
+                    <th>Menge</th>
+                    <th>Preis</th>
+                    <th>Optionen</th>
+                </tr>
+            </thead>
+            <tbody id="cartContent">
+                <tr>
+                    <td colspan="4">Ihr Warenkorb ist leer.</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="cartTotal">
+            <h3>Gesamtsumme: €<span id="totalAmount">0.00</span></h3>
+        </div>
+    </div>
 
-    <!-- Script -->
+    <!-- JavaScript -->
     <script>
-        const modelSelect = document.getElementById('model');
-        const quantityInput = document.getElementById('quantity');
-        const summaryModel = document.getElementById('summaryModel');
-        const summaryQuantity = document.getElementById('summaryQuantity');
-        const summaryTotal = document.getElementById('summaryTotal');
-
-        const prices = {
+        const modellDropdown = document.getElementById('productModel');
+        const mengenFeld = document.getElementById('productQuantity');
+        const bestellübersicht = document.getElementById('orderSummary');
+        const warenkorbTabelle = document.getElementById('cartContent');
+        const gesamtWarenkorb = document.getElementById('totalAmount');
+        const zumWarenkorbButton = document.getElementById('addToCartBtn');
+        const preise = {
             'orange-x1': 699,
             'orange-pro': 899,
             'orange-ultra': 1099
         };
+        const einkaufswagen = [];
 
-        function updateSummary() {
-            const selectedModel = modelSelect.value;
-            const quantity = parseInt(quantityInput.value, 10) || 1;
+        function aktualisiereBestellübersicht() {
+            const ausgewähltesModell = modellDropdown.value;
+            const menge = parseInt(mengenFeld.value, 10) || 1;
 
-            summaryModel.textContent = selectedModel ? modelSelect.options[modelSelect.selectedIndex].text : 'Nichts ausgewählt';
-            summaryQuantity.textContent = quantity;
-
-            const total = selectedModel ? prices[selectedModel] * quantity : 0;
-            summaryTotal.textContent = total.toFixed(2);
+            if (ausgewähltesModell) {
+                const modellText = modellDropdown.options[modellDropdown.selectedIndex].text;
+                const gesamt = preise[ausgewähltesModell] * menge;
+                document.getElementById('summaryModel').textContent = `Gerät: ${modellText}`;
+                document.getElementById('summaryQuantity').textContent = `Menge: ${menge}`;
+                document.getElementById('summaryTotal').textContent = `Gesamtpreis: €${gesamt.toFixed(2)}`;
+            } else {
+                bestellübersicht.querySelectorAll('p').forEach(p => p.textContent = '-');
+            }
         }
 
-        modelSelect.addEventListener('change', updateSummary);
-        quantityInput.addEventListener('input', updateSummary);
+        function aktualisiereWarenkorb() {
+            warenkorbTabelle.innerHTML = '';
 
-        const checkoutForm = document.getElementById('checkoutForm');
-        checkoutForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Ihre Bestellung wurde erfolgreich aufgegeben!');
-        });
-    </script>
+            if (einkaufswagen.length === 0) {
+                warenkorbTabelle.innerHTML = '<tr><td colspan="4">Ihr Warenkorb ist leer.</td></tr>';
+                gesamtWarenkorb.textContent = '0.00';
+                return;
+            }
 
+            let gesamtpreis = 0;
 
-<!-- Warenkorb -->
-
-
-
-<div class="cart" id="shoppingCart">
-    <h2>Warenkorb</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Produkt</th>
-                <th>Menge</th>
-                <th>Preis</th>
-                <th>Aktionen</th>
-            </tr>
-        </thead>
-        <tbody id="cartItems">
-            <tr>
-                <td colspan="4">Ihr Warenkorb ist leer.</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-
-
-<!-- Checkout-Formular -->
-<div class="container">
-    <form id="checkoutForm">
-        <!-- Exisitierende Formularfelder -->
-        <button type="button" id="addToCartButton">Zum Warenkorb hinzufügen</button>
-        <button type="submit">Bestellung absenden</button>
-    </form>
-</div>
-
-<script>
-    const cart = [];
-    const cartItems = document.getElementById('cartItems');
-    const addToCartButton = document.getElementById('addToCartButton');
-
-    function updateCart() {
-        cartItems.innerHTML = ''; // Entferne existierende Warenkorbinhalte
-
-        if (cart.length === 0) {
-            cartItems.innerHTML = '<tr><td colspan="4">Ihr Warenkorb ist leer.</td></tr>';
-            return;
-        }
-
-        cart.forEach((item, index) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${item.modelText}</td>
-                <td>${item.quantity}</td>
-                <td>€${(item.price * item.quantity).toFixed(2)}</td>
-                <td><button type="button" onclick="removeFromCart(${index})">Entfernen</button></td>
-            `;
-            cartItems.appendChild(row);
-        });
-    }
-
-    function addToCart() {
-        const selectedModel = modelSelect.value;
-        const modelText = modelSelect.options[modelSelect.selectedIndex].text;
-        const quantity = parseInt(quantityInput.value, 10);
-
-        if (!selectedModel) {
-            alert('Bitte wählen Sie ein Modell aus.');
-            return;
-        }
-
-        // Überprüfe, ob Artikel schon im Warenkorb ist
-        const existingItemIndex = cart.findIndex(item => item.model === selectedModel);
-        if (existingItemIndex !== -1) {
-            cart[existingItemIndex].quantity += quantity; // Aktualisiere Menge
-        } else {
-            cart.push({
-                model: selectedModel,
-                modelText,
-                quantity,
-                price: prices[selectedModel],
+            einkaufswagen.forEach((artikel, index) => {
+                const zeile = document.createElement('tr');
+                zeile.innerHTML = `
+                    <td>${artikel.name}</td>
+                    <td>${artikel.menge}</td>
+                    <td>€${(artikel.preis * artikel.menge).toFixed(2)}</td>
+                    <td><button onclick="entferneArtikel(${index})">Entfernen</button></td>
+                `;
+                warenkorbTabelle.appendChild(zeile);
+                gesamtpreis += artikel.preis * artikel.menge;
             });
+
+            gesamtWarenkorb.textContent = gesamtpreis.toFixed(2);
         }
 
-        updateCart(); // Aktualisiere Warenkorbansicht
-        updateSummary(); // Aktualisiere Übersicht
-    }
+        function zumWarenkorbHinzufügen() {
+            const ausgewähltesModell = modellDropdown.value;
+            const modellName = modellDropdown.options[modellDropdown.selectedIndex].text;
+            const menge = parseInt(mengenFeld.value, 10);
 
-    function removeFromCart(index) {
-        cart.splice(index, 1); // Entferne Artikel aus Warenkorb
-        updateCart(); // Aktualisiere Warenkorbansicht
-        updateSummary(); // Aktualisiere Übersicht
-    }
+            if (!ausgewähltesModell || menge < 1) {
+                alert('Bitte wählen Sie ein Modell und eine gültige Menge aus.');
+                return;
+            }
 
-    addToCartButton.addEventListener('click', addToCart);
+            const vorhandenerArtikel = einkaufswagen.find(artikel => artikel.id === ausgewähltesModell);
 
-    const cartTotal = document.createElement('div');
-cartTotal.id = 'cartTotal';
-cartTotal.innerHTML = `<h3>Gesamtpreis: €<span id="totalPrice">0.00</span></h3>`;
-document.querySelector('.cart').appendChild(cartTotal);
+            if (vorhandenerArtikel) {
+                vorhandenerArtikel.menge += menge;
+            } else {
+                einkaufswagen.push({
+                    id: ausgewähltesModell,
+                    name: modellName,
+                    menge,
+                    preis: preise[ausgewähltesModell]
+                });
+            }
 
-function calculateTotalPrice() {
-    const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-    document.getElementById('totalPrice').textContent = totalPrice.toFixed(2);
-}
+            aktualisiereWarenkorb();
+            aktualisiereBestellübersicht();
+        }
 
-function updateCart() {
-    cartItems.innerHTML = ''; // Entferne existierende Warenkorbinhalte
+        function entferneArtikel(index) {
+            einkaufswagen.splice(index, 1);
+            aktualisiereWarenkorb();
+        }
 
-    if (cart.length === 0) {
-        cartItems.innerHTML = '<tr><td colspan="4">Ihr Warenkorb ist leer.</td></tr>';
-        calculateTotalPrice(); // Aktualisiere Gesamtpreis
-        return;
-    }
-
-    cart.forEach((item, index) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${item.modelText}</td>
-            <td>${item.quantity}</td>
-            <td>€${(item.price * item.quantity).toFixed(2)}</td>
-            <td><button type="button" onclick="removeFromCart(${index})">Entfernen</button></td>
-        `;
-        cartItems.appendChild(row);
-    });
-
-    calculateTotalPrice(); // Aktualisiere Gesamtpreis
-}
-
-function addToCart() {
-    const selectedModel = modelSelect.value;
-    const modelText = modelSelect.options[modelSelect.selectedIndex].text;
-    const quantity = parseInt(quantityInput.value, 10);
-
-    if (!selectedModel) {
-        alert('Bitte wählen Sie ein Modell aus.');
-        return;
-    }
-
-    // Überprüfe, ob Artikel schon im Warenkorb ist
-    const existingItemIndex = cart.findIndex(item => item.model === selectedModel);
-    if (existingItemIndex !== -1) {
-        cart[existingItemIndex].quantity += quantity; // Aktualisiere Menge
-    } else {
-        cart.push({
-            model: selectedModel,
-            modelText,
-            quantity,
-            price: prices[selectedModel],
-        });
-    }
-
-    updateCart(); // Aktualisiere Warenkorbansicht
-    updateSummary(); // Aktualisiere Übersicht
-}
-
-function removeFromCart(index) {
-    cart.splice(index, 1); // Entferne Artikel aus Warenkorb
-    updateCart(); // Aktualisiere Warenkorbansicht
-    updateSummary(); // Aktualisiere Übersicht
-}
-
-addToCartButton.addEventListener('click', addToCart);
-
-
-
-</script>
-
-
+        modellDropdown.addEventListener('change', aktualisiereBestellübersicht);
+        mengenFeld.addEventListener('input', aktualisiereBestellübersicht);
+        zumWarenkorbButton.addEventListener('click', zumWarenkorbHinzufügen);
+    </script>
 </body>
 </html>
