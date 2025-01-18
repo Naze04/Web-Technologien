@@ -3,7 +3,8 @@
     <head>
         <title>OPhone Produktseite</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/product.css" type="text/css">
+        <link rel="stylesheet" href="../css/style.css">
+        <script type="text/javascript" src="../js/script.js"></script>
     </head>
     <body>
         <!--Nav Bar-->
@@ -14,9 +15,7 @@
         <h1>EarthPods 4 kaufen</h1>
         <div class="row">
             <section class="mainsection-left">
-                <div style="width: 100%;">
-                    <img class="round" src="../assets/EarthPodsBig.jpg" alt="EarthPods">
-                </div>
+                <img class="roundimg" src="../assets/EarthPodsBig.jpg" alt="EarthPods">
             </section>
             <!--Product description-->
             <section class="mainsection-right">
@@ -44,22 +43,10 @@
                         eff. Zins p.a.****
                     </div>
                 </section>
-                <div class="mid">
+                <div class="txtaligncenter">
                     <button class="orange">Kaufen</button>
                     <button class="orange clear black">Warenkorb</button>
                 </div>
-            </section>
-        </div>
-        <!--More-->
-        <div class="row">
-            <section class="b-round">
-
-            </section>
-            <section class="b-round">
-
-            </section>
-            <section class="b-round">
-
             </section>
         </div>
         

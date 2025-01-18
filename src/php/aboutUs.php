@@ -3,13 +3,14 @@
     <head>
         <title>About Us</title>
         <meta charset="UTF-8">
-	    <link rel="stylesheet" href="../css/aboutUs.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <script type="text/javascript" src="../js/script.js"></script>
     </head>
     <body>
         <!--Nav Bar-->
         <?php include ('nav.php'); ?>
 
-	    <div class="rahmen">  
+	    <div class="rahmen">
             <div class="Inhalt">
                 <table class="TableInhalt" width="1080">
 	    			<tr>

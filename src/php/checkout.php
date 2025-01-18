@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orange Shop - Checkout</title>
-    <link rel="stylesheet" href="../css/checkout.css" type="text/css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Orange Shop - Checkout</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <script type="text/javascript" src="../js/script.js"></script>
     </head>
-    <body>
+    <body onLoad="onCheckoutLoad()">
         <!--Nav Bar-->
         <?php include ('nav.php'); ?>
             
@@ -48,41 +49,6 @@
                 <button type="submit">Bestellung absenden</button>
             </form>
         </div>
-    
-        <!-- Script -->
-        <script>
-            const modelSelect = document.getElementById('model');
-            const quantityInput = document.getElementById('quantity');
-            const summaryModel = document.getElementById('summaryModel');
-            const summaryQuantity = document.getElementById('summaryQuantity');
-            const summaryTotal = document.getElementById('summaryTotal');
-    
-            const prices = {
-                'orange-x1': 699,
-                'orange-pro': 899,
-                'orange-ultra': 1099
-            };
-        
-            function updateSummary() {
-                const selectedModel = modelSelect.value;
-                const quantity = parseInt(quantityInput.value, 10) || 1;
-            
-                summaryModel.textContent = selectedModel ? modelSelect.options[modelSelect.selectedIndex].text : 'None';
-                summaryQuantity.textContent = quantity;
-            
-                const total = selectedModel ? prices[selectedModel] * quantity : 0;
-                summaryTotal.textContent = total.toFixed(2);
-            }
-        
-            modelSelect.addEventListener('change', updateSummary);
-            quantityInput.addEventListener('input', updateSummary);
-        
-            const checkoutForm = document.getElementById('checkoutForm');
-            checkoutForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-                alert('Ihre Bestellung wurde erfolgreich aufgeben!');
-            });
-        </script>
     	<?php include ('footer.php'); ?>
     </body>
 </html>

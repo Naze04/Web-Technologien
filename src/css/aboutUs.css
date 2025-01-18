@@ -74,7 +74,8 @@ article {
 	min-height: 300px;
 }
 
-h2 {background: rgba(0, 0, 0, 0.5);
+h2 {
+    background: rgba(0, 0, 0, 0.5);
 	color: white;
 	font-size: 65px;
 	max-height: 100px;

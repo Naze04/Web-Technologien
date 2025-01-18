@@ -46,3 +46,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 });
+
+//On Load or checkout
+function onCheckoutLoad() {
+  const modelSelect = document.getElementById('model');
+  const quantityInput = document.getElementById('quantity');
+  const summaryModel = document.getElementById('summaryModel');
+  const summaryQuantity = document.getElementById('summaryQuantity');
+  const summaryTotal = document.getElementById('summaryTotal');
+
+  const prices = {
+      'orange-x1': 699,
+      'orange-pro': 899,
+      'orange-ultra': 1099
+  };
+
+  function updateSummary() {
+      const selectedModel = modelSelect.value;
+      const quantity = parseInt(quantityInput.value, 10) || 1;
+  
+      summaryModel.textContent = selectedModel ? modelSelect.options[modelSelect.selectedIndex].text : 'None';
+      summaryQuantity.textContent = quantity;
+  
+      const total = selectedModel ? prices[selectedModel] * quantity : 0;
+      summaryTotal.textContent = total.toFixed(2);
+  }
+
+  modelSelect.addEventListener('change', updateSummary);
+  quantityInput.addEventListener('input', updateSummary);
+  const checkoutForm = document.getElementById('checkoutForm');
+  
+  checkoutForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Ihre Bestellung wurde erfolgreich aufgeben!');
+  });
+}
