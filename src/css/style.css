@@ -4,13 +4,20 @@ body {
     font-family: Arial;
     
     --maincolor: #ff6600;
+    --maincolorvariation: #bd4d03;
+
     --secondarycolor: black;
+    --secondarycolorvariation: black;
 
     --backgroundmain: white;
     --backgroundmainvariation: lightgray;
-    --backgroundsecond: #6f6f6f;
+
+    --backgroundsecondary: #a8a8a8;
+    --backgroundsecondaryvariation: #949494;
 
     --textmain: black;
+    --textmainvariation: #5e5e5e00;
+
     --textsecondary: white;
 }
 
@@ -23,15 +30,11 @@ body {
     text-align: center;
 }
 
-.black {
-    color: black;
+.textmainvariation {
+    color: var(--textmainvariation);
 }
 
-.gray {
-    color: gray;
-}
-
-.orangered {
+.maincolor {
     color: var(--maincolor);
 }
 
@@ -42,17 +45,26 @@ body {
 
 nav {
     width: 100%;
-    background: var(--backgroundmain);
     display: flex;
+}
+
+.navmenu {
+    justify-content: center;
+    display: flex;
+    list-style: none;
+    width: 100%;
+    
+    background: var(--backgroundsecondary);
 
     a {
+        background: var(--backgroundsecondary);
         color: var(--textmain);
         text-decoration: none;
         font-size: 14px;
         display: block;
 
         &:hover {
-            background-color: var(--backgroundmain);
+            background-color: var(--backgroundsecondaryvariation);
         }
     }
 
@@ -63,13 +75,6 @@ nav {
     h5 {
         padding: 10px;
     }
-}
-
-.menu {
-    justify-content: center;
-    display: flex;
-    list-style: none;
-    width: 100%;
     
     li {
         display: block;
@@ -86,7 +91,6 @@ nav {
 .dropdown, #logindropdown, #profiledropdown {
     list-style: none;
     position: fixed;
-    background: var(--backgroundmain);
     z-index: 999;
 
     clip: auto;
@@ -104,39 +108,30 @@ nav {
 #logindropdown, #profiledropdown {
     right: 0;
     width: 300px;
-}
+    background-color: var(--backgroundsecondary);
 
-/* Full-width inputs */
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
 
-/* Set a style for all buttons */
-.loginbtn {
-    background-color: #04AA6D;
-    color: var(--textsecondary);
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-
-/* Add a hover effect for buttons */
-.loginbtn:hover, .cancelbtn:hover {
-    opacity: 0.8;
+    button {
+        background-color: var(--maincolor);
+        color: var(--textsecondary);
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    
+        &:hover {
+            background-color: var(--maincolorvariation);
+        }
+    }
 }
 
 /* Center the avatar image inside this container */
@@ -176,7 +171,7 @@ span.psw {
 /* /footer */
 footer { 
     color: var(--textsecondary); 
-	background: var(--backgroundsecond);
+	background: var(--backgroundsecondary);
 	height: 325px;
 	width: 100%;
     font-family: Arial;
@@ -241,33 +236,28 @@ footer {
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 25px;
-    /*
-    &:hover {
-        filter: brightness(80%);
-    }
-    */
 }
 
 .orange {
     border-color: var(--maincolor);
     background-color: var(--maincolor);
+
+    &:hover {
+        background-color: var(--maincolor);
+        border-color: var(--maincolor);
+        color: var(--textsecondary);
+    }
 }
 
 .white {
     border-color: white;
     background-color: white;
-}
 
-.orange:hover {
-    background-color: var(--maincolor);
-    border-color: var(--maincolor);
-    color: var(--textsecondary);
-}
-
-.white:hover {
-    background-color: #ebeaea;
-    border-color: white;
-    color: var(--textmain);
+    &:hover {
+        background-color: #ebeaea;
+        border-color: white;
+        color: var(--textmain);
+    }
 }
 
 .clearWhite {
@@ -321,25 +311,24 @@ footer {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-  
-}
-  
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-  
-.card:hover {
-    transform: scale(1.1);
-    box-shadow: 8px 8px 8px grey;
-    transition: 0.5s;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 8px 8px 8px grey;
+        transition: 0.5s;
+    }
 }
   
 /* Buttons */
 #prev-btn, #next-btn {
-    text-align:center;
+    text-align: center;
     width: 34px;
     height: 34px;
     position: absolute;
@@ -382,17 +371,17 @@ footer {
     text-align: center;
     width: 300px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-.shop-item h2 {
-    font-size: 18px;
-    margin: 10px 0;
-}
+    h2 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
 
-.shop-item p {
-    font-size: 14px;
-    color: #555;
-    margin: 10px 0;
+    p {
+        font-size: 14px;
+        color: #555;
+        margin: 10px 0;
+    }
 }
 
 .shop-img {
@@ -411,7 +400,7 @@ footer {
     margin: 20px;
 }
 
-.roundimg,.b-round {
+.roundimg, .b-round {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -528,10 +517,10 @@ footer {
         border: none;
         border-radius: 4px;
         cursor: pointer;
-    }
 
-    button:hover {
-        background-color: var(--maincolor);
+        &:hover {
+            background-color: var(--maincolor);
+        }
     }
 }
 
@@ -541,14 +530,14 @@ footer {
     padding: 15px;
     background: var(--backgroundmainvariation);
     border-radius: 4px;
-}
 
-.summary h2 {
-    margin-top: 0;
-}
+    h2 {
+        margin-top: 0;
+    }
 
-.summary p {
-    margin: 5px 0;
+    p {
+        margin: 5px 0;
+    }
 }
 
 /* FAQ */

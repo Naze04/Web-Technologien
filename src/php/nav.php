@@ -1,5 +1,5 @@
 <nav>
-    <ul class="menu">
+    <ul class="navmenu">
         <li><a href="home.php"><img alt="Logo" src=../assets/orange_logo.png class="navlogo"></a></li>
         <li>
             <a href="shop.php"><h4>Shop</h4></a>
@@ -58,13 +58,12 @@
                         <input type="text" placeholder="Enter Username" name="uname" required>
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw" required>
-                        <button type="submit" class="loginbtn">Login</button>
+                        <button type="submit">Login</button>
                         <label>
                             <input type="checkbox" checked="checked" name="remember">Remember me
                         </label>
                     </div>
                     <div class="logincontainer">
-                        <button type="button" class="cancelbtn">Cancel</button>
                         <span class="psw"><a href="#">Forgot password?</a></span>
                     </div>
                 </form>
@@ -79,13 +78,12 @@
                         <input type="text" placeholder="Enter Username" name="uname" required>
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw" required>
-                        <button type="submit" class="loginbtn">Login</button>
+                        <button type="submit">Login</button>
                         <label>
                             <input type="checkbox" checked="checked" name="remember">Remember me
                         </label>
                     </div>
                     <div class="logincontainer">
-                        <button type="button" class="cancelbtn">Cancel</button>
                         <span class="psw"><a href="#">Forgot password?</a></span>
                     </div>
                 </form>

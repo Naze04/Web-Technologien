@@ -11,7 +11,7 @@
         <?php include ('nav.php'); ?>
 
         <!--Product-->
-        <h3 class="orangered">Neu</h3>
+        <h3 class="maincolor">Neu</h3>
         <h1>OPhone 16 Pro kaufen</h1>
         <div class="row">
             <section class="mainsection-left">
@@ -19,7 +19,7 @@
             </section>
             <!--Product description-->
             <section class="mainsection-right">
-                <h1 class="std-margin">Modell. <span class="gray">Welches ist das richtige Modell für dich?</span></h1>
+                <h1 class="std-margin">Modell. <span class="textmainvariation">Welches ist das richtige Modell für dich?</span></h1>
                 <!--Product selection-->
                 <section class="b-round">
                     <div class="left">

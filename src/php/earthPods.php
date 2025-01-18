@@ -11,7 +11,7 @@
         <?php include ('nav.php'); ?>
 
         <!--Product-->
-        <h3 class="orangered">Kostenlose Gravur</h3>
+        <h3 class="maincolor">Kostenlose Gravur</h3>
         <h1>EarthPods 4 kaufen</h1>
         <div class="row">
             <section class="mainsection-left">

@@ -11,7 +11,7 @@
         <?php include ('nav.php'); ?>
 
         <!--Product-->
-        <h3 class="orangered">Neu</h3>
+        <h3 class="maincolor">Neu</h3>
         <h1>Apple Watch Series 10 kaufen</h1>
         <div class="row">
             <section class="mainsection-left">
@@ -19,7 +19,7 @@
             </section>
             <!--Product description-->
             <section class="mainsection-right">
-                <h1 class="std-margin">Gehäuse. <span class="gray">Los geht's mit Material und Finish.</span></h1>
+                <h1 class="std-margin">Gehäuse. <span class="textmainvariation">Los geht's mit Material und Finish.</span></h1>
                 <!--Product selection-->
                 <section class="b-round">
                     <div class="left">
