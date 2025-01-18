@@ -11,7 +11,7 @@
         <?php include ('nav.php'); ?>
 
 	    <div class="rahmen">
-            <div class="Inhalt">
+            <div class="AboutUsInhalt">
                 <table class="TableInhalt" width="1080">
 	    			<tr>
                         <td>

@@ -2,13 +2,13 @@
     <table class="footerTable">
     <tr>
 	    <td class="fTHead">
-            <h3><a href="Placeholder.php" class="footerLink">Impressum</a></h3>
+            <h3><a href="impessum.php" class="footerLink">Impressum</a></h3>
         </td>
         <td class="fTHead">
-            <h3><a href="Placeholder.php" class="footerLink">Kontakt</a></h3>
+            <h3><a href="kontakt.php" class="footerLink">Kontakt</a></h3>
         </td>
         <td class="fTHead">
-            <h3><a href="Placeholder.php" class="footerLink">Newsletter</a></h3>
+            <h3><a href="aboutUs.php" class="footerLink">About Us</a></h3>
         </td>
 	    <td class="fTHead">
             <h3><a href="faq.php" class="footerLink">FAQ</a></h3>

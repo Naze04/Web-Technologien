@@ -9,11 +9,14 @@ body {
     --secondarycolor: black;
     --secondarycolorvariation: black;
 
-    --backgroundmain: white;
-    --backgroundmainvariation: lightgray;
+    --background: white;
+    --backgroundvariation: lightgray;
+    
+    --nav: #e7e7e7;
+    --navvariation: #d9d9d9;
 
-    --backgroundsecondary: #a8a8a8;
-    --backgroundsecondaryvariation: #949494;
+    --footer: #535353;
+    --footervariation: #2d2d2d;
 
     --textmain: black;
     --textmainvariation: #5e5e5e00;
@@ -54,17 +57,17 @@ nav {
     list-style: none;
     width: 100%;
     
-    background: var(--backgroundsecondary);
+    background: var(--nav);
 
-    a {
-        background: var(--backgroundsecondary);
+    a:not(#logindropdown) {
+        background: var(--nav);
         color: var(--textmain);
         text-decoration: none;
         font-size: 14px;
         display: block;
 
         &:hover {
-            background-color: var(--backgroundsecondaryvariation);
+            background-color: var(--navvariation);
         }
     }
 
@@ -108,7 +111,7 @@ nav {
 #logindropdown, #profiledropdown {
     right: 0;
     width: 300px;
-    background-color: var(--backgroundsecondary);
+    background-color: var(--nav);
 
     input[type=text], input[type=password] {
         width: 100%;
@@ -132,30 +135,32 @@ nav {
             background-color: var(--maincolorvariation);
         }
     }
+
+    /* Avatar image */
+    img {
+        width: 80px;
+        border-radius: 50%;
+    }
+    
+    /* Center the avatar image inside this container */
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+    }
+
+    /* Add padding to containers */
+    .logincontainer {
+        padding: 16px;
+    }
+
+    /* The "Forgot password" text */
+    span {
+        text-align: center;
+        margin: 24px 0 12px 0;
+    }
 }
 
-/* Center the avatar image inside this container */
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-}
 
-/* Avatar image */
-.avatar {
-    width: 80px;
-    border-radius: 50%;
-}
-
-/* Add padding to containers */
-.logincontainer {
-    padding: 16px;
-}
-
-/* The "Forgot password" text */
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
@@ -171,7 +176,7 @@ span.psw {
 /* /footer */
 footer { 
     color: var(--textsecondary); 
-	background: var(--backgroundsecondary);
+	background: var(--footer);
 	height: 325px;
 	width: 100%;
     font-family: Arial;
@@ -462,7 +467,7 @@ footer {
     }
 
     th {
-        background-color: var(--backgroundmain);
+        background-color: var(--background);
     }
 }
 
@@ -472,7 +477,7 @@ footer {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background: var(--backgroundmain);
+    background: var(--background);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
@@ -528,7 +533,7 @@ footer {
 .summary {
     margin-top: 30px;
     padding: 15px;
-    background: var(--backgroundmainvariation);
+    background: var(--backgroundvariation);
     border-radius: 4px;
 
     h2 {
@@ -541,13 +546,9 @@ footer {
 }
 
 /* FAQ */
-.FAQRahmen {
-	width: 1080px;
-	margin:0 auto;
-}
-
-
-.FAQInhalt {
+.inhalt {
+	width: 60%;
+	margin: auto;
     background: rgba(0, 0, 0, 0.5);
 	padding-bottom: 20px;
 	color: var(--textsecondary);
@@ -556,41 +557,50 @@ footer {
     h2 {
     	background: rgba(0, 0, 0, 0.5);
     	font-size: 65px;
-    	min-height: 100px;
-        min-width: 1080px;
         text-align: center;
         padding-top: 20px;
         margin: auto;
     }
-}
 
-.Uberschrift {
-    background: rgba(0, 0, 0, 0.5);
-	font-size: 65px;
-	max-height: 100px;
-    max-width: 425px;
-    width: 1080px;
-    text-align: center;
-}
+    h3 {
+        font-size: 30px;
+        margin-left: 50px;
+    }
 
+    p {
+        margin-left: 100px;
+        margin-bottom: 15px;
+    }
+    
+    span {
+        color: var(--maincolor);
+    }
 
-.Uberschrifthalfte {
-    color: var(--maincolor);
-}
-
-.Kategorie {
-	font-size: 30px;
-	margin-left: 50px;
-}
-
-.Zahl {
-	color: var(--maincolor);
-	font: 30px;
-}
-
-.Frage {
-	margin-left: 100px;
-	margin-bottom: 15px;
+    form {
+        padding-top: 20px;
+        padding-left: 50px;
+        padding-bottom: 30px;
+    }
+    
+    textarea {
+        min-width: 800px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-color: white;
+    }
+    
+    input {
+        width: 400px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-color: white;
+    }
+    
+    .absenden {
+        font-size: 30px;
+        max-width: 200px;
+        color: orangered;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-color: white;
+    }
 }
 
 /* About Us */
@@ -609,7 +619,7 @@ footer {
 	color: var(--textsecondary);
 }
 
-.Inhalt {
+.AboutUsInhalt {
     background: rgba(0, 0, 0, 0.5)   
 }
 

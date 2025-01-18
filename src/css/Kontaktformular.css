@@ -1,0 +1,58 @@
+body {
+    margin: 0px;
+    height: auto;
+    font-family: Arial;
+}
+
+.rahmen {
+	width: 1080px;
+	margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#Uberschrift {
+    background: rgba(0, 0, 0, 0.5);
+	color: white;
+	font-size: 65px;
+    text-align: center;
+    margin: auto;
+}
+
+
+.Uberschrifthalfte {
+    color: orangered;
+}
+
+label {
+    color: white;
+}
+
+#formular {
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+}
+
+textarea {
+    min-width: 800px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: white;
+}
+
+input {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: white;
+}
+
+#absenden {
+    font-size: 30px;
+    max-width: 200px;
+    color: orangered;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: white;
+}
+
+p {
+    color: white;
+}

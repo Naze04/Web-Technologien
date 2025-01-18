@@ -38,18 +38,9 @@
             </ul>
         </li>
         <li>
-            <a href="aboutUs.php"><h4>About Us</h4></a>
-            <ul class="dropdown">
-                <li><a href="PLACEHOLDER"><h5>1</h5></a></li>
-                <li><a href="PLACEHOLDER"><h5>2</h5></a></li>
-                <li><a href="PLACEHOLDER"><h5>3</h5></a></li>
-                <li><a href="PLACEHOLDER"><h5>4</h5></a></li>
-            </ul>
-        </li>   
-        <li  class="login">
             <a onclick="onLoginClick()"><h4>Login</h4></a>
             <ul id="logindropdown">
-                <form action="action_page.php" method="post" class="loginform">
+                <form action="action_page.php" method="post">
                     <div class="imgcontainer">
                         <img src="../assets/silly_guy.jpg" alt="Avatar" class="avatar">
                     </div>
@@ -64,12 +55,12 @@
                         </label>
                     </div>
                     <div class="logincontainer">
-                        <span class="psw"><a href="#">Forgot password?</a></span>
+                        <span class="forgotpsw"><a href="#">Forgot password?</a></span>
                     </div>
                 </form>
             </ul>
             <ul id="profiledropdown">
-                <form action="action_page.php" method="post" class="loginform">
+                <form action="action_page.php" method="post">
                     <div class="imgcontainer">
                         <img src="../assets/silly_guy.jpg" alt="Avatar" class="avatar">
                     </div>
@@ -84,7 +75,7 @@
                         </label>
                     </div>
                     <div class="logincontainer">
-                        <span class="psw"><a href="#">Forgot password?</a></span>
+                        <span class="forgotpsw"><a href="#">Forgot password?</a></span>
                     </div>
                 </form>
             </ul>
