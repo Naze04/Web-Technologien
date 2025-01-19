@@ -46,35 +46,15 @@
                         eff. Zins p.a.****
                     </p>
                 </section>
-<<<<<<< HEAD
-                <div class="mid">
-                    <button class="orange">Kaufen</button>
-                    <form action="cart.php" method="POST">
-                        <input type="hidden" name="product_id" value="2">
-                        <input type="hidden" name="product_name" value="OWatch">
-                        <input type="hidden" name="product_price" value="799.00">
-                        <input type="hidden" name="quantity" value="1">
-                        <button type="submit" name="action" value="add" class="orange clear black">Warenkorb</button>
-                    <form>
-                </div>
-            </section>
-        </div>
-        <!--More-->
-        <div class="row">
-            <section class="b-round">
-
-            </section>
-            <section class="b-round">
-
-            </section>
-            <section class="b-round">
-
-            </section>
-=======
                 <button class="orange">Kaufen</button>
-                <button class="orange clear black">Warenkorb</button>
+                <form action="cart.php" method="POST">
+                    <input type="hidden" name="product_id" value="2">
+                    <input type="hidden" name="product_name" value="OWatch">
+                    <input type="hidden" name="product_price" value="799.00">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" name="action" value="add" class="orange clear black">Warenkorb</button>
+                <form>
             </right>
->>>>>>> Kai-Branch
         </div>
         
         <!--Information-->
