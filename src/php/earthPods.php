@@ -13,47 +13,43 @@
         <!--Product-->
         <h3 class="maincolor">Kostenlose Gravur</h3>
         <h1>EarthPods 4 kaufen</h1>
-        <div class="row">
-            <section class="mainsection-left">
-                <img class="roundimg" src="../assets/EarthPodsBig.jpg" alt="EarthPods">
-            </section>
+        <div class="product">
+            <left>
+                <img src="../assets/EarthPodsBig.jpg" alt="EarthPods">
+            </left>
             <!--Product description-->
-            <section class="mainsection-right">
-                <h1 class="std-margin">Wähle dein Modell</h1>
+            <right>
+                <h1>Wähle dein Modell</h1>
                 <!--Product selection-->
-                <section class="b-round">
-                    <div class="left">
+                <section>
+                    <div>
                         <h3>EarthPods 4</h3>
                     </div>
-                    <div class="right">
+                    <p>
                         Ab 149,00 €<br>
                         oder 49,67 €/Rate<br>
                         bei 3 Raten mit 0 %<br>
                         eff. Zins p.a.****
-                    </div>
+                    </p>
                 </section>
-                <section class="b-round">
-                    <div class="left">
-                        <h3>AirPods 4 mit Aktiver Geräuschunter-<br>drückung</h3>
-                    </div>
-                    <div class="right">
+                <section>
+                    <h3>AirPods 4 mit Aktiver Geräuschunter-<br>drückung</h3>
+                    <p>
                         Ab 199,00 €<br>
                         oder 66,33 €/Rate<br>
                         bei 3 Raten mit 0 %<br>
                         eff. Zins p.a.****
-                    </div>
+                    </p>
                 </section>
-                <div class="txtaligncenter">
-                    <button class="orange">Kaufen</button>
-                    <button class="orange clear black">Warenkorb</button>
-                </div>
-            </section>
+                <button class="orange">Kaufen</button>
+                <button class="orange clear black">Warenkorb</button>
+            </right>
         </div>
         
         <!--Information-->
         <div class="information">
             <h2>Technische Details</h2>
-            <table class="informationtb">
+            <table>
                 <tr>
                     <th>Feature</th>
                     <th>Beschreibung</th>

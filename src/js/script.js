@@ -48,36 +48,80 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //On Load or checkout
-function onCheckoutLoad() {
-  const modelSelect = document.getElementById('model');
-  const quantityInput = document.getElementById('quantity');
-  const summaryModel = document.getElementById('summaryModel');
-  const summaryQuantity = document.getElementById('summaryQuantity');
-  const summaryTotal = document.getElementById('summaryTotal');
-
-  const prices = {
+function initializePage() {
+  const modellDropdown = document.getElementById('productModel');
+  const mengenFeld = document.getElementById('productQuantity');
+  const bestellübersicht = document.getElementById('orderSummary');
+  const warenkorbTabelle = document.getElementById('cartContent');
+  const gesamtWarenkorb = document.getElementById('totalAmount');
+  const zumWarenkorbButton = document.getElementById('addToCartBtn');
+  const preise = {
       'orange-x1': 699,
       'orange-pro': 899,
       'orange-ultra': 1099
   };
-
-  function updateSummary() {
-      const selectedModel = modelSelect.value;
-      const quantity = parseInt(quantityInput.value, 10) || 1;
-  
-      summaryModel.textContent = selectedModel ? modelSelect.options[modelSelect.selectedIndex].text : 'None';
-      summaryQuantity.textContent = quantity;
-  
-      const total = selectedModel ? prices[selectedModel] * quantity : 0;
-      summaryTotal.textContent = total.toFixed(2);
+  const einkaufswagen = [];
+  function aktualisiereBestellübersicht() {
+      const ausgewähltesModell = modellDropdown.value;
+      const menge = parseInt(mengenFeld.value, 10) || 1;
+      if (ausgewähltesModell) {
+          const modellText = modellDropdown.options[modellDropdown.selectedIndex].text;
+          const gesamt = preise[ausgewähltesModell] * menge;
+          document.getElementById('summaryModel').textContent = `Gerät: ${modellText}`;
+          document.getElementById('summaryQuantity').textContent = `Menge: ${menge}`;
+          document.getElementById('summaryTotal').textContent = `Gesamtpreis: €${gesamt.toFixed(2)}`;
+      } else {
+          bestellübersicht.querySelectorAll('p').forEach(p => p.textContent = '-');
+      }
   }
-
-  modelSelect.addEventListener('change', updateSummary);
-  quantityInput.addEventListener('input', updateSummary);
-  const checkoutForm = document.getElementById('checkoutForm');
-  
-  checkoutForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-      alert('Ihre Bestellung wurde erfolgreich aufgeben!');
-  });
+  function aktualisiereWarenkorb() {
+      warenkorbTabelle.innerHTML = '';
+      if (einkaufswagen.length === 0) {
+          warenkorbTabelle.innerHTML = '<tr><td colspan="4">Ihr Warenkorb ist leer.</td></tr>';
+          gesamtWarenkorb.textContent = '0.00';
+          return;
+      }
+      let gesamtpreis = 0;
+      einkaufswagen.forEach((artikel, index) => {
+          const zeile = document.createElement('tr');
+          zeile.innerHTML = `
+              <td>${artikel.name}</td>
+              <td>${artikel.menge}</td>
+              <td>€${(artikel.preis * artikel.menge).toFixed(2)}</td>
+              <td><button onclick="entferneArtikel(${index})">Entfernen</button></td>
+          `;
+          warenkorbTabelle.appendChild(zeile);
+          gesamtpreis += artikel.preis * artikel.menge;
+      });
+      gesamtWarenkorb.textContent = gesamtpreis.toFixed(2);
+  }
+  function zumWarenkorbHinzufügen() {
+      const ausgewähltesModell = modellDropdown.value;
+      const modellName = modellDropdown.options[modellDropdown.selectedIndex].text;
+      const menge = parseInt(mengenFeld.value, 10);
+      if (!ausgewähltesModell || menge < 1) {
+          alert('Bitte wählen Sie ein Modell und eine gültige Menge aus.');
+          return;
+      }
+      const vorhandenerArtikel = einkaufswagen.find(artikel => artikel.id === ausgewähltesModell);
+      if (vorhandenerArtikel) {
+          vorhandenerArtikel.menge += menge;
+      } else {
+          einkaufswagen.push({
+              id: ausgewähltesModell,
+              name: modellName,
+              menge,
+              preis: preise[ausgewähltesModell]
+          });
+      }
+      aktualisiereWarenkorb();
+      aktualisiereBestellübersicht();
+  }
+  function entferneArtikel(index) {
+      einkaufswagen.splice(index, 1);
+      aktualisiereWarenkorb();
+  }
+  modellDropdown.addEventListener('change', aktualisiereBestellübersicht);
+  mengenFeld.addEventListener('input', aktualisiereBestellübersicht);
+  zumWarenkorbButton.addEventListener('click', zumWarenkorbHinzufügen);
 }

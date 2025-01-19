@@ -13,49 +13,47 @@
         <!--Product-->
         <h3 class="maincolor">Neu</h3>
         <h1>Apple Watch Series 10 kaufen</h1>
-        <div class="row">
-            <section class="mainsection-left">
+        <div class="product">
+            <left>
                 <img class="roundimg" src="../assets/OWatchBig.jpg" alt="OWatch">
-            </section>
+            </left>
             <!--Product description-->
-            <section class="mainsection-right">
-                <h1 class="std-margin">Gehäuse. <span class="textmainvariation">Los geht's mit Material und Finish.</span></h1>
+            <right>
+                <h1>Gehäuse. <span class="textmainvariation">Los geht's mit Material und Finish.</span></h1>
                 <!--Product selection-->
-                <section class="b-round">
-                    <div class="left">
+                <section>
+                    <div>
                         <h3>Aluminium</h3>
                         Mit GPS oder GPS + Cellular
                     </div>
-                    <div class="right">
+                    <p>
                         Ab 449 €<br>
                         oder 19,19 €/Rate bei<br>
                         24 Raten mit 2,5 %<br>
                         eff. Zins p.a.****
-                    </div>
+                    </p>
                 </section>
-                <section class="b-round">
-                    <div class="left">
+                <section>
+                    <div>
                         <h3>Titan</h3>
                         Mit GPS + Cellular
                     </div>
-                    <div class="right">
+                    <p>
                         Ab 799 €<br>
                         oder 34,15 €/Rate bei<br>
                         24 Raten mit 2,5 %<br>
                         eff. Zins p.a.****
-                    </div>
+                    </p>
                 </section>
-                <div class="txtaligncenter">
-                    <button class="orange">Kaufen</button>
-                    <button class="orange clear black">Warenkorb</button>
-                </div>
-            </section>
+                <button class="orange">Kaufen</button>
+                <button class="orange clear black">Warenkorb</button>
+            </right>
         </div>
         
         <!--Information-->
         <div class="information">
             <h2>Technische Details</h2>
-            <table class="informationtb">
+            <table>
                 <tr>
                     <th>Feature</th>
                     <th>Beschreibung</th>

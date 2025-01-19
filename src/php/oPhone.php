@@ -13,49 +13,47 @@
         <!--Product-->
         <h3 class="maincolor">Neu</h3>
         <h1>OPhone 16 Pro kaufen</h1>
-        <div class="row">
-            <section class="mainsection-left">
+        <div class="product">
+            <left>
                 <img class="roundimg" src="../assets/OphonePro.jpg" alt="O-Phone">
-            </section>
+            </left>
             <!--Product description-->
-            <section class="mainsection-right">
-                <h1 class="std-margin">Modell. <span class="textmainvariation">Welches ist das richtige Modell für dich?</span></h1>
+            <right>
+                <h1>Modell. <span class="textmainvariation">Welches ist das richtige Modell für dich?</span></h1>
                 <!--Product selection-->
-                <section class="b-round">
-                    <div class="left">
+                <section>
+                    <div>
                         <h3>OPhone 16 Pro</h3>
                         6,3" Display
                     </div>
-                    <div class="right">
+                    <p>
                         Ab 1.199 €<br>
                         oder 49,96 €/Rate<br>
                         bei 24 Raten mit 0 %<br>
                         eff. Zins p.a.****
-                    </div>
+                    </p>
                 </section>
-                <section class="b-round">
-                    <div class="left">
+                <section>
+                    <div>
                         <h3>OPhone 16 Pro Max</h3>
                         6,9" Display
                     </div>
-                    <div class="right">
+                    <p>
                         Ab 1.449 €<br>
                         oder 60,38 €/Rate<br>
                         bei 24 Raten mit 0 %<br>
                         eff. Zins p.a.****
-                    </div>
+                    </p>
                 </section>
-                <div class="txtaligncenter">
-                    <button class="orange">Kaufen</button>
-                    <button class="orange clear black">Warenkorb</button>
-                </div>
-            </section>
+                <button class="orange">Kaufen</button>
+                <button class="orange clear black">Warenkorb</button>
+            </right>
         </div>
         
         <!--Information-->
         <div class="information">
             <h2>Technische Details</h2>
-            <table class="informationtb">
+            <table>
                 <tr>
                     <th>Feature</th>
                     <th>Beschreibung</th>

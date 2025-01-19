@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
     <head>
-        <title>OPhone Shop</title>
+        <title>Orange Shop</title>
         <meta charset="UTF-8">
 	    <link rel="stylesheet" href="../css/style.css">
         <script type="text/javascript" src="../js/script.js"></script>
@@ -11,8 +11,8 @@
         <?php include ('nav.php'); ?>
     
         <div class="shopheader">
-            <h1>Willkommen im OPhone Shop</h1>
-            <p>Wählen Sie aus einer Vielzahl innovativer Produkte!</p>
+            <h1>Willkommen im Orange Shop</h1>
+            <p>Entdecken Sie unsere vielfältige Auswahl an innovativen Produkten!</p>
         </div>
     
         <div class="shop-grid">

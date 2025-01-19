@@ -1,54 +1,77 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Orange Shop - Checkout</title>
-        <link rel="stylesheet" href="../css/style.css">
-        <script type="text/javascript" src="../js/script.js"></script>
-    </head>
-    <body onLoad="onCheckoutLoad()">
+<head>
+    <title>Orange Shop - Kasse</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body onload="initializePage()">
         <!--Nav Bar-->
         <?php include ('nav.php'); ?>
-            
-        <!-- Checkout Form -->
-        <div class="container">
-            <h1>Orange Shop - Checkout</h1>
-    
-            <form id="checkoutForm">
-                <label for="name">Vor- und Zuname</label>
-                <input type="text" id="name" name="name" placeholder="Geben Sie Ihren Vor- und Zunamen ein" required>
-    
-                <label for="email">E-Mail-Addresse</label>
-                <input type="email" id="email" name="email" placeholder="Geben Sie Ihre E-Mail-Adresse ein" required>
-    
-                <label for="phone">Telefonnummer/label>
-                <input type="tel" id="phone" name="phone" placeholder="Geben Sie Ihre Telefonnummer ein" required>
-    
-                <label for="address">Versandaddresse</label>
-                <input type="text" id="address" name="address" placeholder="Geben Sie Ihre Lieferadresse ein" required>
-    
-                <label for="model">Wähle Gerät</label>
-                <select id="model" name="model" required>
-                    <option value="">--Wähle Gerät--</option>
-                    <option value="orange-x1">Orange X1 - €699</option>
-                    <option value="orange-pro">Orange Pro - €899</option>
-                    <option value="orange-ultra">Orange Ultra - €1099</option>
-                </select>
-    
-                <label for="quantity">Anzahl</label>
-                <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
-    
-                <div class="summary" id="orderSummary">
-                    <h2>Bestellübersicht</h2>
-                    <p><strong>Modell:</strong> <span id="summaryModel">Nichts ausgewählt</span></p>
-                    <p><strong>Menge:</strong> <span id="summaryQuantity">1</span></p>
-                    <p><strong>Gesamtpreis:</strong> €<span id="summaryTotal">0.00</span></p>
-                </div>
-    
-                <button type="submit">Bestellung absenden</button>
-            </form>
+   
+    <!-- Kassenformular -->
+    <div class="container">
+        <h1>Orange Shop - Checkout</h1>
+
+        <form id="checkoutForm">
+            <label for="customerName">Name</label>
+            <input type="text" id="customerName" name="customerName" placeholder="Vor- und Nachname eingeben" required>
+
+            <label for="email">E-Mail-Adresse</label>
+            <input type="email" id="email" name="email" placeholder="E-Mail-Adresse eingeben" required>
+
+            <label for="phone">Telefonnummer</label>
+            <input type="tel" id="phone" name="phone" placeholder="Telefonnummer eingeben" required>
+
+            <label for="address">Lieferadresse</label>
+            <input type="text" id="address" name="address" placeholder="Adresse eingeben" required>
+
+            <label for="productModel">Gerät auswählen</label>
+            <select id="productModel" name="productModel" required>
+                <option value="">--Gerät wählen--</option>
+                <option value="orange-x1">Orange X1 - €699</option>
+                <option value="orange-pro">Orange Pro - €899</option>
+                <option value="orange-ultra">Orange Ultra - €1099</option>
+            </select>
+
+            <label for="productQuantity">Menge</label>
+            <input type="number" id="productQuantity" name="productQuantity" min="1" max="10" value="1" required>
+
+            <div class="order-summary" id="orderSummary">
+                <h2>Bestellübersicht</h2>
+                <p id="summaryModel">Gerät: -</p>
+                <p id="summaryQuantity">Menge: -</p>
+                <p id="summaryTotal">Gesamtpreis: €0.00</p>
+            </div>
+        </form>
+
+        <button type="button" id="addToCartBtn">Zum Warenkorb hinzufügen</button>
+        <button type="submit">Bestellung absenden</button>
+    </div>
+
+    <!-- Warenkorb -->
+    <div class="cart">
+        <table>
+            <thead>
+                <tr>
+                    <th>Produkt</th>
+                    <th>Menge</th>
+                    <th>Preis</th>
+                    <th>Optionen</th>
+                </tr>
+            </thead>
+            <tbody id="cartContent">
+                <tr>
+                    <td colspan="4">Ihr Warenkorb ist leer.</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="cartTotal">
+            <h3>Gesamtsumme: €<span id="totalAmount">0.00</span></h3>
         </div>
-    	<?php include ('footer.php'); ?>
-    </body>
+    </div>
+    <?php include ('footer.php'); ?>
+</body>
 </html>

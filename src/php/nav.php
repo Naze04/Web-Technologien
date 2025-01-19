@@ -1,42 +1,15 @@
 <nav>
     <ul class="navmenu">
         <li><a href="home.php"><img alt="Logo" src=../assets/orange_logo.png class="navlogo"></a></li>
-        <li>
+        <li class="left">
             <a href="shop.php"><h4>Shop</h4></a>
             <ul class="dropdown">
-                <li><a href="PLACEHOLDER"><h5>1</h5></a></li>
-                <li><a href="PLACEHOLDER"><h5>2</h5></a></li>
-                <li><a href="PLACEHOLDER"><h5>3</h5></a></li>
-                <li><a href="PLACEHOLDER"><h5>4</h5></a></li>
+                <li><a href="oPhone.php"><h5>OPhone</h5></a></li>
+                <li><a href="oWatch.php"><h5>OWatch</h5></a></li>
+                <li><a href="earthPods.php"><h5>EarthPods</h5></a></li>
             </ul>
         </li>
-        <li>
-            <a href="oPhone.php"><h4>OPhone</h4></a>
-            <ul class="dropdown">
-                <li><a href="PLACEHOLDER"><h5>1</h5></a></li>
-                <li><a href="PLACEHOLDER"><h5>2</h5></a></li>
-                <li><a href="PLACEHOLDER"><h5>3</h5></a></li>
-                <li><a href="PLACEHOLDER"><h5>4</h5></a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="oWatch.php"><h4>OWatch</h4></a>
-            <ul class="dropdown">
-                <li><a href="PLACEHOLDER"><h5>1</h5></a></li>
-                <li><a href="PLACEHOLDER"><h5>2</h5></a></li>
-                <li><a href="PLACEHOLDER"><h5>3</h5></a></li>
-                <li><a href="PLACEHOLDER"><h5>4</h5></a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="earthPods.php"><h4>EarthPods</h4></a>
-            <ul class="dropdown">
-                <li><a href="PLACEHOLDER"><h5>1</h5></a></li>
-                <li><a href="PLACEHOLDER"><h5>2</h5></a></li>
-                <li><a href="PLACEHOLDER"><h5>3</h5></a></li>
-                <li><a href="PLACEHOLDER"><h5>4</h5></a></li>
-            </ul>
-        </li>
+        <li class="right"><a href="cart.php"><img alt="Logo" src=../assets/cart.png class="navlogo"></a></li>
         <li>
             <a onclick="onLoginClick()"><h4>Login</h4></a>
             <ul id="logindropdown">
