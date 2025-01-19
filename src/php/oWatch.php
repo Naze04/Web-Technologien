@@ -1,3 +1,4 @@
+<?php require 'session_start.php'; ?>
 <!DOCTYPE html>
 <html lang="de">
     <head>
@@ -47,7 +48,13 @@
                 </section>
                 <div class="mid">
                     <button class="orange">Kaufen</button>
-                    <button class="orange clear black">Warenkorb</button>
+                    <form action="cart.php" method="POST">
+                        <input type="hidden" name="product_id" value="2">
+                        <input type="hidden" name="product_name" value="OWatch">
+                        <input type="hidden" name="product_price" value="799.00">
+                        <input type="hidden" name="quantity" value="1">
+                        <button type="submit" name="action" value="add" class="orange clear black">Warenkorb</button>
+                    <form>
                 </div>
             </section>
         </div>
