@@ -4,7 +4,7 @@
         <title>OPhone Produktseite</title>
         <meta charset="UTF-8">
 	    <link rel="stylesheet" href="../css/style.css">
-        <script type="text/javascript" src="../js/script.js"></script>
+        <script src="../js/script.js"></script>
     </head>
     <body>
         <!--Nav Bar-->
@@ -14,11 +14,11 @@
         <h3 class="maincolor">Neu</h3>
         <h1>Apple Watch Series 10 kaufen</h1>
         <div class="product">
-            <left>
+            <div class="left">
                 <img class="roundimg" src="../assets/OWatchBig.jpg" alt="OWatch">
-            </left>
+            </div>
             <!--Product description-->
-            <right>
+            <div class="right">
                 <h1>Gehäuse. <span class="textmainvariation">Los geht's mit Material und Finish.</span></h1>
                 <!--Product selection-->
                 <section>
@@ -46,8 +46,14 @@
                     </p>
                 </section>
                 <button class="orange">Kaufen</button>
-                <button class="orange clear black">Warenkorb</button>
-            </right>
+                <form action="cart.php" method="POST">
+                    <input type="hidden" name="product_id" value="2">
+                    <input type="hidden" name="product_name" value="OWatch">
+                    <input type="hidden" name="product_price" value="799.00">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" name="action" value="add" class="orange clear black">Warenkorb</button>
+                </form>
+            </div>
         </div>
         
         <!--Information-->

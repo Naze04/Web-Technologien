@@ -1,10 +1,13 @@
+<?php
+require 'session_start.php';
+?>
 <!DOCTYPE html>
 <html lang="de">
     <head>
         <title>Orange Shop</title>
         <meta charset="UTF-8">
 	    <link rel="stylesheet" href="../css/style.css">
-        <script type="text/javascript" src="../js/script.js"></script>
+        <script src="../js/script.js"></script>
     </head>
     <body>
         <!--Nav Bar-->
