@@ -3,51 +3,51 @@
     <head>
         <title>Orange Inc product Html</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/home.css" type="text/css">
+	    <link rel="stylesheet" href="../css/style.css">
+        <script type="text/javascript" src="../js/script.js"></script>
     </head>
     <body>
         <!--Nav Bar-->
         <?php include ('nav.php'); ?>
 
-        <div class="FlexImg" style="position: relative;">
-            <div style="position: absolute;">
+        <div class="FlexImg">
+            <section>
                 <a href="PLACEHOLDER.php">
-                <img class="img" src="../assets/Ophone_banner.jpg" alt="Ophone">
+                    <img class="img" src="../assets/Ophone_banner.jpg" alt="Ophone">
                 </a>
-            </div>
-            <div style="position: absolute; text-align: center;">
-                <h1 style="color: black; padding: 20px;">Das OPhone</h1>
+            </section>
+            <section>
+                <h1>Das OPhone</h1>
                 <button onclick="location.href='shop.php'" class="orange" style="color: white;">Weitere Infos</button>
                 <button onclick="location.href='Ophone.php'" class="orange clearOrange">Kaufen</button>
-            </div>
+            </section>
         </div>
 
-        <div class="FlexImg" style="position: relative;">
-            <div style="position: absolute;">
+        <div class="FlexImg">
+            <section>
                 <a href="PLACEHOLDER.php">
                 <img class="img" src="../assets/OWatch_banner.jpg" alt="OWatch">
                 </a>
-            </div>
-            <div style="position: absolute; text-align: center;">
-                <h1 style="color: white; padding: 20px">Die OWatch</h1>
+            </section>
+            <section>
+                <h1>Die OWatch</h1>
                 <button onclick="location.href='shop.php'" class="white">Weitere Infos</button>
                 <button onclick="location.href='Ophone.php'" class="white clearWhite">Kaufen</button>
-            </div>
+            </section>
         </div>
 
-        <div class="FlexImg" style="position: relative;">
-            <div style="position: absolute;">
+        <div class="FlexImg">
+            <section>
                 <a href="PLACEHOLDER.php">
                 <img class="img" src="../assets/Earthpod_banner.jpg" alt="Earthpods">
                 </a>
-            </div>
-            <div style="position: absolute; text-align: center;">
-                <h1 style="color: black; padding: 20px">Die Earthpods</h1>
+            </section>
+            <section>
+                <h1>Die Earthpods</h1>
                 <button onclick="location.href='shop.php'" class="orange" style="color: white;">Weitere Infos</button>
                 <button onclick="location.href='Ophone.php'" class="orange clearOrange">Kaufen</button>
-            </div>
+            </section>
         </div>
-
 
         <div id="slider-container">
             <div id="slider">
@@ -62,8 +62,8 @@
                 <div class="card"><img src="../assets/silly_guy.jpg"></div>
                 <div class="card"><img src="../assets/silly_guy.jpg"></div>
             </div>
-        <button id="prev-btn">❮</button>
-        <button id="next-btn">❯</button>
+            <button id="prev-btn">❮</button>
+            <button id="next-btn">❯</button>
         </div>
 		<?php include ('footer.php'); ?>
     </body>

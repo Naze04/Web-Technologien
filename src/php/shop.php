@@ -5,18 +5,18 @@ require 'session_start.php';
 <!DOCTYPE html>
 <html lang="de">
     <head>
-        <title>OPhone Shop</title>
+        <title>Orange Shop</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/style.css" type="text/css">
-        <link rel="stylesheet" href="../css/shop.css" type="text/css">
+	    <link rel="stylesheet" href="../css/style.css">
+        <script type="text/javascript" src="../js/script.js"></script>
     </head>
     <body>
         <!--Nav Bar-->
         <?php include ('nav.php'); ?>
     
-        <div style="padding: 20px; text-align: center;">
-            <h1>Willkommen im OPhone Shop</h1>
-            <p>Wählen Sie aus einer Vielzahl innovativer Produkte!</p>
+        <div class="shopheader">
+            <h1>Willkommen im Orange Shop</h1>
+            <p>Entdecken Sie unsere vielfältige Auswahl an innovativen Produkten!</p>
         </div>
     
         <div class="shop-grid">
