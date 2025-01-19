@@ -1,13 +1,20 @@
+html {
+    height: 100%;
+}
+
 body {
     margin: 0px;
     height: auto;
     font-family: Arial;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
     
     --maincolor: #ff6600;
     --maincolorvariation: #bd4d03;
 
-    --secondarycolor: black;
-    --secondarycolorvariation: black;
+    --secondarycolor: white;
+    --secondarycolorvariation: #ebeaea;
 
     --background: white;
     --backgroundvariation: lightgray;
@@ -29,10 +36,6 @@ body {
     margin: 0;
 }
 
-.txtaligncenter {
-    text-align: center;
-}
-
 .textmainvariation {
     color: var(--textmainvariation);
 }
@@ -42,13 +45,13 @@ body {
 }
 
 /* /navleiste */
-.navlogo {
-    height: 63px;
-}
-
 nav {
     width: 100%;
     display: flex;
+
+    img {
+        height: 63px;
+    }
 }
 
 .navmenu {
@@ -83,8 +86,8 @@ nav {
         display: block;
         position: relative;
     }
-
-    li:hover .dropdown {
+    
+    li:hover #dropdown {
         clip: auto;
         opacity: 1;
         transform: scaleY(1);
@@ -99,7 +102,8 @@ nav {
     }
 }
 
-.dropdown, #logindropdown, #profiledropdown {
+
+#dropdown, #logindropdown, #profiledropdown {
     list-style: none;
     position: fixed;
     z-index: 999;
@@ -111,7 +115,7 @@ nav {
     transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.2, 0, 0.2, 1);
 }
 
-.dropdown {
+#dropdown {
     left: 0;
     width: 100vw;
 }
@@ -144,24 +148,20 @@ nav {
         }
     }
 
-    /* Avatar image */
     img {
         width: 80px;
         border-radius: 50%;
     }
     
-    /* Center the avatar image inside this container */
     .imgcontainer {
         text-align: center;
         margin: 24px 0 12px 0;
     }
 
-    /* Add padding to containers */
     .logincontainer {
         padding: 16px;
     }
 
-    /* The "Forgot password" text */
     span {
         text-align: center;
         margin: 24px 0 12px 0;
@@ -182,28 +182,33 @@ nav {
 } 
 
 /* /footer */
+.spacer {
+    flex: 1 0 auto;
+}
+
 footer { 
     color: var(--textsecondary); 
 	background: var(--footer);
-	height: 325px;
+    margin-top: auto;
 	width: 100%;
     font-family: Arial;
 	text-decoration: none;
-}
 
-.footerTable {
-	margin: auto;
-}
+    table {
+        margin: auto;
 
-.fTHead {
-	width: 250px;
-	height: 50px;
-	text-align: center;
-}
+        td {
+            width: 250px;
+            height: 50px;
+            text-align: center;
 
-.footerLink {
-    text-decoration: none;
-	color: var(--textsecondary);
+            a {
+                text-decoration: none;
+                color: var(--textsecondary);
+            }
+        }
+    }
+
 }
 
 /* /homeseite */
@@ -249,38 +254,33 @@ footer {
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 25px;
+    
+    background-color: var(--textmain);
 }
 
 .orange {
+    color: var(--textsecondary);
     border-color: var(--maincolor);
-    background-color: var(--maincolor);
 
     &:hover {
         background-color: var(--maincolor);
         border-color: var(--maincolor);
-        color: var(--textsecondary);
     }
 }
 
 .white {
-    border-color: white;
-    background-color: white;
+    color: var(--textmain);
+    border-color: var(--secondarycolor);
 
     &:hover {
-        background-color: #ebeaea;
-        border-color: white;
+        background-color: var(--secondarycolorvariation);
+        border-color: var(--secondarycolorvariation);
         color: var(--textmain);
     }
 }
 
-.clearWhite {
+.clearWhite, .clearOrange {
     background-color: rgba(0,0,0,0);
-    color: var(--textsecondary);
-}
-
-.clearOrange {
-    background-color: rgba(0,0,0,0);
-    color: var(--maincolor);
 }
 
 .parent {
@@ -702,13 +702,14 @@ footer {
     }
 
     p {
+        margin: 10px;
         color: var(--textsecondary);
     }
 
     img {
-        margin: 30px;
-        height: auto;
-        vertical-align: middle;
-        border-color: rgba(0, 0, 0, 0.5);
+        margin: auto;
+        width: calc(100% - 10px);
+        max-height: 600px;
+        border: 5px solid rgba(0, 0, 0, 0.5);
     }
 }
