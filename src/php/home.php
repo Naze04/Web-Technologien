@@ -4,7 +4,7 @@
         <title>Orange Inc product Html</title>
         <meta charset="UTF-8">
 	    <link rel="stylesheet" href="../css/style.css">
-        <script type="text/javascript" src="../js/script.js"></script>
+        <script src="../js/script.js"></script>
     </head>
     <body>
         <!--Nav Bar-->
@@ -18,7 +18,7 @@
             </section>
             <section>
                 <h1>Das OPhone</h1>
-                <button onclick="location.href='shop.php'" class="orange" style="color: white;">Weitere Infos</button>
+                <button onclick="location.href='shop.php'" class="orange">Weitere Infos</button>
                 <button onclick="location.href='Ophone.php'" class="orange clearOrange">Kaufen</button>
             </section>
         </div>
@@ -44,23 +44,23 @@
             </section>
             <section>
                 <h1>Die Earthpods</h1>
-                <button onclick="location.href='shop.php'" class="orange" style="color: white;">Weitere Infos</button>
+                <button onclick="location.href='shop.php'" class="orange">Weitere Infos</button>
                 <button onclick="location.href='Ophone.php'" class="orange clearOrange">Kaufen</button>
             </section>
         </div>
 
         <div id="slider-container">
             <div id="slider">
-                <div class="card"><img src="../assets/silly_guy.jpg"></div>
-                <div class="card"><img src="../assets/silly_guy.jpg"></div>
-                <div class="card"><img src="../assets/silly_guy.jpg"></div>
-                <div class="card"><img src="../assets/silly_guy.jpg"></div>
-                <div class="card"><img src="../assets/silly_guy.jpg"></div>
-                <div class="card"><img src="../assets/silly_guy.jpg"></div>
-                <div class="card"><img src="../assets/silly_guy.jpg"></div>
-                <div class="card"><img src="../assets/silly_guy.jpg"></div>
-                <div class="card"><img src="../assets/silly_guy.jpg"></div>
-                <div class="card"><img src="../assets/silly_guy.jpg"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg" alt="Bild von einer silly Katze"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg" alt="Bild von einer silly Katze"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg" alt="Bild von einer silly Katze"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg" alt="Bild von einer silly Katze"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg" alt="Bild von einer silly Katze"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg" alt="Bild von einer silly Katze"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg" alt="Bild von einer silly Katze"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg" alt="Bild von einer silly Katze"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg" alt="Bild von einer silly Katze"></div>
+                <div class="card"><img src="../assets/silly_guy.jpg" alt="Bild von einer silly Katze"></div>
             </div>
             <button id="prev-btn">❮</button>
             <button id="next-btn">❯</button>

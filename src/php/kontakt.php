@@ -4,7 +4,7 @@
         <title>Kontaktformular</title>
         <meta charset="UTF-8">
     	<link rel="stylesheet" href="../css/style.css">
-		<script type="text/javascript" src="../js/script.js"></script>
+		<script src="../js/script.js"></script>
     </head>
     <body>
         <!--Nav Bar-->
@@ -21,7 +21,7 @@
                 <label for="telefon">Telefon</label><br>
                 <input type="text" id="telefon" name="telefon" value=""><br><br>
                 <label for="nachricht">Ihre Nachricht</label><br>
-                <textarea rows="8" name="nachricht" required></textarea><br><br>
+                <textarea rows="8" id="nachricht" name="nachricht" required></textarea><br><br>
                 <input type="submit" value="Absenden" class="absenden">
             </form> 
             <p>Nach Absenden des Kontaktformulars gelangen Sie auf wieder auf die Homepage.</p>

@@ -4,7 +4,7 @@
         <title>OPhone Produktseite</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../css/style.css">
-        <script type="text/javascript" src="../js/script.js"></script>
+        <script src="../js/script.js"></script>
     </head>
     <body>
         <!--Nav Bar-->
@@ -14,11 +14,11 @@
         <h3 class="maincolor">Kostenlose Gravur</h3>
         <h1>EarthPods 4 kaufen</h1>
         <div class="product">
-            <left>
+            <div class="left">
                 <img src="../assets/EarthPodsBig.jpg" alt="EarthPods">
-            </left>
+            </div>
             <!--Product description-->
-            <right>
+            <div class="left">
                 <h1>Wähle dein Modell</h1>
                 <!--Product selection-->
                 <section>
@@ -49,7 +49,7 @@
                     <input type="hidden" name="quantity" value="1">
                     <button type="submit" name="action" value="add" class="orange clear black">Warenkorb</button>
                 </form>
-            </right>
+            </div>
         </div>
         
         <!--Information-->

@@ -55,41 +55,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warenkorb</title>
-</head>
-<body>
-    <h1>Ihr Warenkorb</h1>
-    <?php if (!empty($_SESSION['cart'])): ?>
-        <ul>
-            <?php foreach ($_SESSION['cart'] as $item): ?>
-                <li>
-                    <?php echo htmlspecialchars($item['name']); ?> - 
-                    Menge: <?php echo $item['quantity']; ?> - 
-                    Preis: <?php echo number_format($item['price'], 2, ',', '.') . '€'; ?> - 
-                    Gesamt: <?php echo number_format($item['price'] * $item['quantity'], 2, ',', '.') . '€'; ?>
-                    <form action="cart.php" method="POST" style="display:inline;">
-                        <input type="hidden" name="product_id" value="<?php echo $item['product_id']; ?>">
-                        <button type="submit" name="action" value="remove">Entfernen</button>
-                  </form>  </form>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-        <p>
-            <strong>Gesamtsumme: 
-                <?php 
-                echo number_format(array_reduce($_SESSION['cart'], function($total, $item) {
-                    return $total + $item['price'] * $item['quantity'];
-                }, 0), 2, ',', '.') . '€'; 
-                ?>
-            </strong>
-        </p>
-    <?php else: ?>
-        <p>Ihr Warenkorb ist leer.</p>
-    <?php endif; ?>
-
-    <a href="home.php">Zurück zur Startseite</a>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Warenkorb</title>
+    </head>
+    <body>
+        <h1>Ihr Warenkorb</h1>
+        <?php if (!empty($_SESSION['cart'])): ?>
+            <ul>
+                <?php foreach ($_SESSION['cart'] as $item): ?>
+                    <li>
+                        <?php echo htmlspecialchars($item['name']); ?> - 
+                        Menge: <?php echo $item['quantity']; ?> - 
+                        Preis: <?php echo number_format($item['price'], 2, ',', '.') . '€'; ?> - 
+                        Gesamt: <?php echo number_format($item['price'] * $item['quantity'], 2, ',', '.') . '€'; ?>
+                        <form action="cart.php" method="POST" style="display:inline;">
+                            <input type="hidden" name="product_id" value="<?php echo $item['product_id']; ?>">
+                            <button type="submit" name="action" value="remove">Entfernen</button>
+                        </form>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+            <p>
+                <strong>Gesamtsumme: 
+                    <?php 
+                    echo number_format(array_reduce($_SESSION['cart'], function($total, $item) {
+                        return $total + $item['price'] * $item['quantity'];
+                    }, 0), 2, ',', '.') . '€'; 
+                    ?>
+                </strong>
+            </p>
+        <?php else: ?>
+            <p>Ihr Warenkorb ist leer.</p>
+        <?php endif; ?>
+        
+        <a href="home.php">Zurück zur Startseite</a>
+    </body>
 </html>
