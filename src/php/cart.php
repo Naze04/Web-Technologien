@@ -56,9 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="de">
     <head>
+        <title>Warenkorb</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Warenkorb</title>
     </head>
     <body>
         <h1>Ihr Warenkorb</h1>
