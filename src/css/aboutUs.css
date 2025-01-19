@@ -62,28 +62,6 @@ header {
     border-color: rgba(0, 0, 0, 0.5);
 }
 
-footer { 
-    color: white; 
-	background: rgba(0, 0, 0, 0.75);
-	height: 325px;
-	width: 1080px;
-}
-
-.Impressum {
-	width: 250px;
-	display: flex;
-	justify-content: center;
-    float: left;
-    padding: 10px;
-    opacity: 1.00;
-    font-family: Arial;
-}
-
-#Impressumtext {
-	padding-top: 20px;
-	margin-left: 20px;
-}
-
 .textbild {
     display: flex;
 }
@@ -113,19 +91,4 @@ h2 {background: rgba(0, 0, 0, 0.5);
 
 .Uberschrifthalfte {
     color: orange;
-}
-
-#Kontaktlink {
-    text-decoration: none;
-    color: white;
-}
-
-#Newsletterlink {
-    text-decoration: none;
-    color: white;
-}
-
-#FAQlink {
-	text-decoration: none;
-	color: white;
 }

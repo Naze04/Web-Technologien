@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <title>About Us</title>
 	<link rel="stylesheet" href="../css/aboutUs.css">
-    <link rel="stylesheet" href="../css/nav.css" type="text/css">
-    <script src="../js/script.js"></script>
-</head>
-<body onload="onLoad()">
+    </head>
+    <body>
         <!--Nav Bar-->
-        <nav id="nav"></nav>
+        <?php include ('nav.php'); ?>
 
 	<div id="rahmen">  
         <div id="Inhalt">
@@ -28,12 +26,12 @@
                         </section>
                     </td>
                     <td>
-                        <div ><img src="Placeholder.html" class="Bilder" border="5"></div>
+                        <div ><img src="Placeholder.php" class="Bilder" border="5"></div>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <div><img src="Placeholder.html" class="Bilder" border="5"></div>
+                        <div><img src="Placeholder.php" class="Bilder" border="5"></div>
                     </td>
                     
 				    <td>
@@ -63,12 +61,12 @@
                         </section>
                     </td>
                     <td>
-                        <div ><img src="Placeholder.html" class="Bilder" border="5"></div>
+                        <div ><img src="Placeholder.php" class="Bilder" border="5"></div>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <div><img src="Placeholder.html" class="Bilder" border="5"></div>
+                        <div><img src="Placeholder.php" class="Bilder" border="5"></div>
                     </td>
                     
 				    <td>
@@ -98,12 +96,12 @@
                         </section>
                     </td>
                     <td>
-                        <div ><img src="Placeholder.html" class="Bilder" border="5"></div>
+                        <div ><img src="Placeholder.php" class="Bilder" border="5"></div>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <div><img src="Placeholder.html" class="Bilder" border="5"></div>
+                        <div><img src="Placeholder.php" class="Bilder" border="5"></div>
                     </td>
                     
 				    <td>
@@ -121,36 +119,7 @@
                 </tr>
             </table>
         </div>
-		<footer>
-			<div class="Impressum">
-                <h3>Impressum</h3>
-            </div>
-            <div class="Impressum">
-                <h3><a href="Placeholder.html" id="Kontaktlink">Kontakt</a></h3>
-            </div>
-            <div class="Impressum">
-                <h3><a href="Placeholder.html" id="Newsletterlink">Newsletter</a></h3>
-            </div>
-			<div class="Impressum">
-                <h3><a href="Placeholder.html" id="FAQlink">FAQ</a></h3>
-            </div>
-			
-			<div id="Impressumtext">
-				<p>Angaben gem. § 5 Telemediengesetz</p> 
-
-                 <table>
-                    <tr><td>Anschrtift:<br><br><br><br></td><td>Orange<br>
-                                                    Orangenstraße 2<br>
-                                                    55555 <br>
-                                                    Orangenland</td></tr>
-                    
-                    <tr><td>Tel.:</td><td>+49 1200 12-0</td></tr>
-                    <tr><td>E-Mail:</td><td>info@Orange.com</td>
-                    <tr><td>Geschäftsführung:</td><td>Peter Orange</td></tr>
-                    <tr><td>Ust-Ident.-Nr.:</td><td>DE 823456789</td></tr>
-                    <tr><td>Handelsregister</td><td>Amtsgericht Ulm, HRB 640080</td></tr>
-                </table></div>
-		</footer>
 	</div>
+    <?php include ('footer.php'); ?>
 </body>
 </html>

@@ -1,0 +1,27 @@
+footer { 
+    color: white; 
+	background: rgba(0, 0, 0, 0.75);
+	height: 325px;
+	width: 100%;
+    font-family: Arial;
+	text-decoration: none;
+}
+
+.footerTable {
+	margin: auto;
+}
+
+.fTHead {
+	width: 250px;
+	height: 50px;
+	text-align: center;
+}
+
+.fTbody {
+	text-align: center;
+}
+
+.footerLink {
+    text-decoration: none;
+	color: white;
+}
