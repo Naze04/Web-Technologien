@@ -1,15 +1,17 @@
+<?php
+require 'session_start.php';
+?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <title>Orange Shop - Kasse</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <script type="text/javascript" src="../js/script.js"></script>
 </head>
-<body onload="initializePage()">
-        <!--Nav Bar-->
-        <?php include ('nav.php'); ?>
+<body>
+    <!--Nav Bar-->
+    <?php include ('nav.php'); ?>
    
     <!-- Kassenformular -->
     <div class="container">
@@ -28,49 +30,39 @@
             <label for="address">Lieferadresse</label>
             <input type="text" id="address" name="address" placeholder="Adresse eingeben" required>
 
-            <label for="productModel">Gerät auswählen</label>
-            <select id="productModel" name="productModel" required>
-                <option value="">--Gerät wählen--</option>
-                <option value="orange-x1">Orange X1 - €699</option>
-                <option value="orange-pro">Orange Pro - €899</option>
-                <option value="orange-ultra">Orange Ultra - €1099</option>
-            </select>
-
-            <label for="productQuantity">Menge</label>
-            <input type="number" id="productQuantity" name="productQuantity" min="1" max="10" value="1" required>
-
             <div class="order-summary" id="orderSummary">
                 <h2>Bestellübersicht</h2>
-                <p id="summaryModel">Gerät: -</p>
-                <p id="summaryQuantity">Menge: -</p>
-                <p id="summaryTotal">Gesamtpreis: €0.00</p>
+                <?php if (!empty($_SESSION['cart'])): ?>
+                <ul>
+                    <?php foreach ($_SESSION['cart'] as $item): ?>
+                        <li>
+                        
+                            <?php echo htmlspecialchars($item['name']); ?> - 
+                            Menge: <?php echo $item['quantity']; ?> - 
+                            Preis: <?php echo number_format($item['price'], 2, ',', '.') . '€'; ?>
+                            <form action="cart.php" method="POST" style="display:inline;">
+                                <input type="hidden" name="product_id" value="<?php echo $item['product_id']; ?>">
+                        </form>  </form>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <p>
+                    <strong>Gesamtsumme: 
+                        <?php 
+                        echo number_format(array_reduce($_SESSION['cart'], function($total, $item) {
+                            return $total + $item['price'] * $item['quantity'];
+                        }, 0), 2, ',', '.') . '€'; 
+                        ?>
+                    </strong>
+                </p>
+            <?php else: ?>
+            <div>Ihr Warenkorb ist leer.</div>
+            <?php endif; ?>
+
+            <button onclick="location.href='cart.php'">Zurück zum Warenkorb</button>
+            <button type="submit">Bestellung absenden</button>
             </div>
         </form>
-
-        <button type="button" id="addToCartBtn">Zum Warenkorb hinzufügen</button>
-        <button type="submit">Bestellung absenden</button>
-    </div>
-
-    <!-- Warenkorb -->
-    <div class="cart">
-        <table>
-            <thead>
-                <tr>
-                    <th>Produkt</th>
-                    <th>Menge</th>
-                    <th>Preis</th>
-                    <th>Optionen</th>
-                </tr>
-            </thead>
-            <tbody id="cartContent">
-                <tr>
-                    <td colspan="4">Ihr Warenkorb ist leer.</td>
-                </tr>
-            </tbody>
-        </table>
-        <div id="cartTotal">
-            <h3>Gesamtsumme: €<span id="totalAmount">0.00</span></h3>
-        </div>
     </div>
     <?php include ('footer.php'); ?>
 </body>

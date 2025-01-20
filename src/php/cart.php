@@ -31,7 +31,7 @@ function removeFromCart($product_id) {
     });
 }
 
-// POST-Handling (Hinzufügen oder Entfernen von Artikeln)
+// Hinzufügen oder Entfernen von Artikeln
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'];
 
@@ -46,21 +46,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         removeFromCart($product_id);
     }
 
-    // Nach dem POST-Request zurück zur Warenkorbseite
     header('Location: cart.php');
     exit;
 }
-
-// Warenkorb anzeigen
 ?>
+
+<!-- Warenkorb anzeigen -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warenkorb</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src="../js/script.js"></script>
 </head>
 <body>
+    <!--Nav Bar-->
+    <?php include ('nav.php'); ?>
     <h1>Ihr Warenkorb</h1>
     <?php if (!empty($_SESSION['cart'])): ?>
         <ul>
@@ -73,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <form action="cart.php" method="POST" style="display:inline;">
                         <input type="hidden" name="product_id" value="<?php echo $item['product_id']; ?>">
                         <button type="submit" name="action" value="remove">Entfernen</button>
-                  </form>  </form>
+                    </form>
                 </li>
             <?php endforeach; ?>
         </ul>
@@ -89,7 +91,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php else: ?>
         <p>Ihr Warenkorb ist leer.</p>
     <?php endif; ?>
-
-    <a href="home.php">Zurück zur Startseite</a>
+    <a href="shop.php">Weiter einkaufen</a>
+    <a href="checkout.php">Zur Kasse</a>
+    <?php include ('footer.php'); ?>
 </body>
 </html>
