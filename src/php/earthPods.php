@@ -18,7 +18,7 @@
                 <img src="../assets/EarthPodsBig.jpg" alt="EarthPods">
             </div>
             <!--Product description-->
-            <div class="left">
+            <div class="right">
                 <h1>Wähle dein Modell</h1>
                 <!--Product selection-->
                 <section>

@@ -53,7 +53,7 @@
                     <input type="hidden" name="quantity" value="1">
                     <button type="submit" name="action" value="add" class="orange clear black" tabindex="2">In den Warenkorb</button>
                 </form>
-            </right>
+            </div>
         </div>
         
         <!--Information-->
