@@ -1,92 +1,84 @@
+<?php require 'session_start.php'; ?>
 <!DOCTYPE html>
 <html lang="de">
     <head>
         <title>OPhone Produktseite</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/style.css" type="text/css">
-        <link rel="stylesheet" href="../css/product.css" type="text/css">
+	    <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/script.js"></script>
     </head>
     <body>
         <!--Nav Bar-->
         <?php include ('nav.php'); ?>
 
         <!--Product-->
-        <h3 style="color: orangered;">Neu</h3>
-        <h1>Apple Watch Series 10 kaufen</h1>
-        <div class="row">
-            <section class="mainsection-left">
-                <img class="round" src="../assets/OWatchBig.jpg" alt="OWatch">
-            </section>
+        <h3 class="maincolor">Neu</h3>
+        <h1>Die OWatch series 89 kaufen</h1>
+        <div class="product">
+            <div class="left">
+                <img class="roundimg" src="../assets/OWatchBig.jpg" alt="OWatch">
+            </div>
             <!--Product description-->
-            <section class="mainsection-right">
-                <h1 class="std-margin">Gehäuse. <span style="color: gray">Los geht's mit Material und Finish.</span></h1>
+            <div class="right">
+                <h1>Gehäuse. <span class="textmainvariation">Los geht's mit Material und Finish.</span></h1>
                 <!--Product selection-->
-                <section class="b-round">
-                    <div class="left">
+                <section>
+                    <div>
                         <h3>Aluminium</h3>
                         Mit GPS oder GPS + Cellular
                     </div>
-                    <div class="right">
+                    <p>
                         Ab 449 €<br>
                         oder 19,19 €/Rate bei<br>
                         24 Raten mit 2,5 %<br>
                         eff. Zins p.a.****
-                    </div>
+                    </p>
                 </section>
-                <section class="b-round">
-                    <div class="left">
+                <section>
+                    <div>
                         <h3>Titan</h3>
                         Mit GPS + Cellular
                     </div>
-                    <div class="right">
+                    <p>
                         Ab 799 €<br>
                         oder 34,15 €/Rate bei<br>
                         24 Raten mit 2,5 %<br>
                         eff. Zins p.a.****
-                    </div>
+                    </p>
                 </section>
-                <div class="mid">
-                    <button class="orange">Kaufen</button>
-                    <button class="orange clear black">Warenkorb</button>
-                </div>
-            </section>
-        </div>
-        <!--More-->
-        <div class="row">
-            <section class="b-round">
-
-            </section>
-            <section class="b-round">
-
-            </section>
-            <section class="b-round">
-
-            </section>
+                <form action="cart.php" method="POST">
+                    <input type="hidden" name="product_id" value="2">
+                    <input type="hidden" name="product_name" value="OWatch">
+                    <input type="hidden" name="product_price" value="799.00">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" name="action" value="add" class="orange clear black" tabindex="2">In den Warenkorb</button>
+                </form>
+            </div>
         </div>
         
         <!--Information-->
-        <div style="padding: 20px; text-align: center;">
+        <div class="information">
             <h2>Technische Details</h2>
-            <table style="margin: auto; border-collapse: collapse; width: 80%;">
+            <table>
                 <tr>
-                    <th style="border: 1px solid #ddd; padding: 8px;">Feature</th>
-                    <th style="border: 1px solid #ddd; padding: 8px;">Beschreibung</th>
+                    <th>Feature</th>
+                    <th>Beschreibung</th>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Display</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">6.7 Zoll Super Retina XDR</td>
+                    <td>Display</td>
+                    <td>6.7 Zoll Super Retina XDR</td>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Prozessor</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">A16 Bionic Chip</td>
+                    <td>Prozessor</td>
+                    <td>A16 Bionic Chip</td>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Kamera</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Triple-Kamera-System mit 48 MP</td>
+                    <td>Kamera</td>
+                    <td>Triple-Kamera-System mit 48 MP</td>
                 </tr>
                 <tr>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Batterielaufzeit</td>
-                    <td style="border: 1px solid #ddd; padding: 8px;">Bis zu 28 Stunden</td>
+                    <td>Batterielaufzeit</td>
+                    <td>Bis zu 28 Stunden</td>
                 </tr>
             </table>
         </div>

@@ -1,0 +1,58 @@
+body {
+    margin: 0px;
+    height: auto;
+    font-family: Arial;
+}
+
+#rahmen {
+	width: 1080px;
+	margin:0 auto;
+}
+
+#Inhalt {
+    background: rgba(0, 0, 0, 0.5);
+	padding-bottom: 20px;
+}
+
+h2 {
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+	font-size: 65px;
+	min-height: 100px;
+    min-width: 1080px;
+    text-align: center;
+    padding-top: 20px;
+    margin: auto;
+}
+
+#Uberschrift {
+    background: rgba(0, 0, 0, 0.5);
+	color: white;
+	font-size: 65px;
+	max-height: 100px;
+    max-width: 425px;
+    width: 1080px;
+    text-align: center;
+}
+
+
+.Uberschrifthalfte {
+    color: orangered;
+}
+
+.Kategorie {
+	color: white;
+	font-size: 30px;
+	margin-left: 50px;
+}
+
+.Zahl {
+	color: orangered;
+	font: 30px;
+}
+
+.Frage {
+	color: white;
+	margin-left: 100px;
+	margin-bottom: 15px;
+}

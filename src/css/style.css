@@ -1,17 +1,246 @@
-div {
-    display: block;
+html {
+    height: 100%;
 }
 
 body {
     margin: 0px;
     height: auto;
     font-family: Arial;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    --maincolor: #ff6600;
+    --maincolorvariation: #bd4d03;
+
+    --secondarycolor: white;
+    --secondarycolorvariation: #ebeaea;
+
+    --background: white;
+    --backgroundvariation: lightgray;
+    
+    --nav: #F8F8F8;
+    --navvariation: #dedede;
+
+    --footer: #535353;
+    --footervariation: #2d2d2d;
+
+    --textmain: black;
+    --textmainvariation: #5e5e5e00;
+
+    --textsecondary: white;
 }
 
-img {
-    height: auto;
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.textmainvariation {
+    color: var(--textmainvariation);
+}
+
+.maincolor {
+    color: var(--maincolor);
+}
+
+/* /navleiste */
+nav {
+    width: 100%;
+    display: flex;
+}
+
+nav img {
+    height: 63px;
+}
+
+.navmenu {
+    justify-content: center;
+    display: flex;
+    list-style: none;
+    width: 100%;
+    
+    background: var(--nav);
+}
+
+.navmenu a {
+    background: var(--nav);
+    color: var(--textmain);
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+}
+
+.navmenu a:hover {
+    background-color: var(--navvariation);
+}
+
+.navmenu h4 {
+    padding: 25px;
+}
+
+.navmenu h5 {
+    padding: 10px;
+}
+
+.navmenu li {
+    display: block;
+    position: relative;
+}
+
+.navmenu li:hover #dropdown {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.navmenu .left {
+    margin-right: auto;
+}
+
+.navmenu .right {
+    margin-left: auto;
+}
+
+
+#dropdown, #logindropdown, #profiledropdown {
+    list-style: none;
+    position: fixed;
+    z-index: 999;
+
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+#dropdown {
+    left: 0;
+    width: 100vw;
+}
+
+#logindropdown, #profiledropdown {
+    right: 0;
+    width: 300px;
+    background-color: var(--nav);
+}
+
+#logindropdown input[type=text], #profiledropdown input[type=text], #logindropdown input[type=password], #profiledropdown input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#logindropdown button, #profiledropdown button {
+    background-color: var(--maincolor);
+    color: var(--textsecondary);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
     width: 100%;
 }
+
+#logindropdown button:hover, #profiledropdown button:hover {
+    background-color: var(--maincolorvariation);
+}
+
+#logindropdown img, #profiledropdown img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+#logindropdown .imgcontainer, #profiledropdown .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+#logindropdown .logincontainer, #profiledropdown .logincontainer {
+    padding: 16px;
+}
+
+#logindropdown span, #profiledropdown span {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+
+
+/* Change styles for span and cancel button on extra small screens */
+/*@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+}*/
+
+/* /footer */
+.spacer {
+    flex: 1 0 auto;
+}
+
+footer { 
+    color: var(--textsecondary); 
+	background: var(--footer);
+    margin-top: auto;
+	width: 100%;
+    font-family: Arial;
+	text-decoration: none;
+}
+
+footer table {
+    margin: auto;
+}
+
+footer table td {
+    width: 250px;
+    height: 50px;
+    text-align: center;
+}
+
+footer table td a {
+    text-decoration: none;
+    color: var(--textsecondary);
+}
+
+/* /homeseite */
+.Flexboxy {
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.FlexImg {
+    border-top: white 20px solid;
+    min-height: 692px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+
+
+.FlexImg section {
+    position: absolute;
+    text-align: center;
+}
+
+.FlexImg h1 {
+    color: var(--textmain);
+    padding: 20px
+}
+
+.FlexImg img {
+    width: 100%;
+}
+
 
 /* /homeseite */
 .white, .orange {
@@ -24,32 +253,32 @@ img {
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 25px;
+    
+    color: var(--textmain);
 }
 
 .orange {
-    border-color:#ff6600;
-    background-color: #ff6600;
-    color: white;
-}
-
-.white {
-    border-color: white;
-    background-color: white;
-    color: black;
+    background-color: var(--maincolor);
+    border-color: var(--maincolor);
 }
 
 .orange:hover {
-    background-color: #ff781f;
-    border-color:#ff781f;
-    color: white;
+    background-color: var(--maincolorvariation);
+    border-color: var(--maincolorvariation);
+}
+
+.white {
+    background-color: var(--secondarycolor);
+    border-color: var(--secondarycolor);
 }
 
 .white:hover {
-    background-color: #ebeaea;
-    border-color: white;
+    background-color: var(--secondarycolorvariation);
+    border-color: var(--secondarycolorvariation);
+    color: var(--textmain);
 }
 
-.clear {
+.clearWhite, .clearOrange {
     background-color: rgba(0,0,0,0);
 }
 
@@ -69,7 +298,417 @@ img {
     text-align: center;
 }
 
-table th {
+/* Slider Container */
+#slider-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 36px;
+}
+  
+/* Slider */
+#slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+}
+  
+/* Karten */
+.card {
+    min-width: 200px;
+    height: 150px;
+    background: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 8px 8px 8px grey;
+    transition: 0.5s;
+}
+  
+/* Buttons */
+#prev-btn, #next-btn {
+    text-align: center;
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--maincolor);
+    color: var(--textsecondary);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+  
+#prev-btn {
+    left: 0px;
+}
+  
+#next-btn {
+    right: 0px;
+}
+
+/* Shop-Seite: Raster-Layout */
+.shopheader {
+    padding: 20px;
+    text-align: center;
+}
+
+.shop-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.shop-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.shop-item h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.shop-item p {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.shop-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/*Produktseite*/
+.product {
+    display: inline-flex;
+}
+
+.product .left, .product .left {
+    padding: 20px;
+    margin: auto;
+}
+
+.product .left {
+    min-width: 600px;
+    max-width: calc(100% - 400px);
+}
+
+.product .left img {
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product .right {
+    font-size: 12px;
+    width: 400px;
+    text-align: center;
+}
+
+
+.product .right h1 {
+    margin: 20px;
+}
+
+.product .right section {
+    padding: 20px;
+    display: flex;
+    border: 1px solid black;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product .right section div, .product .right section p {
+    margin: auto;
+    width: 50%;
+}
+
+.product .right section div {
+    text-align: left;
+}
+
+.product .right section p {
+    text-align: right;
+}
+
+.information {
+    padding: 20px;
+    text-align: center;
+}
+
+.information table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.information table th, .information table td {
+    color: var(--textmain);
+    border: 1px solid gray;
+    text-align: left;
+    padding: 8px;
+}
+
+.information table th {
+    background-color: var(--background);
+}
+
+/* Checkout */
+/* Container für das Formular */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: var(--background);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.container h1 {
+    text-align: center;
+    color: var(--maincolor);
+}
+
+/* Formular-Styles */
+#checkoutForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#checkoutForm label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#checkoutForm input, #checkoutForm select {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#checkoutForm button {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 18px;
+    background-color: var(--maincolor);
+    color: var(--textsecondary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#checkoutForm button:hover {
+    background-color: var(--maincolorvariation);
+}
+
+/* Zusammenfassungs-Sektion */
+.order-summary {
+    margin-top: 30px;
+    padding: 15px;
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.order-summary h2 {
+    margin-top: 0;
+}
+
+.order-summary p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Warenkorb */
+.cart {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.cart table th, .cart table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.cart table th {
     background-color: #f2f2f2;
     color: black;
+    font-weight: bold;
+}
+
+.cart table td button {
+    background-color: var(--maincolor);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.cart table td button:hover {
+    background-color: var(--maincolorvariation);
+}
+
+#cartTotal {
+    margin-top: 20px;
+    text-align: right;
+}
+
+#cartTotal h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+
+/* Mobile Responsive Design */
+/*@media (max-width: 768px) {
+    .container, .cart {
+        padding: 15px;
+    }
+
+    input, select, button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .order-summary p, #cartTotal h3 {
+        font-size: 14px;
+    }
+
+    .cart table th, .cart table td {
+        font-size: 14px;
+    }
+}*/
+
+/* FAQ */
+.inhalt {
+	width: 60%;
+	margin: auto;
+    background: rgba(0, 0, 0, 0.5);
+	padding-bottom: 20px;
+	color: var(--textsecondary);
+}
+
+    
+.inhalt h2 {
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 65px;
+    text-align: center;
+    padding-top: 20px;
+    margin: auto;
+}
+
+.inhalt h3 {
+    font-size: 30px;
+    margin-left: 50px;
+}
+
+.inhalt p {
+    margin-left: 100px;
+    margin-bottom: 15px;
+}
+
+.inhalt span {
+    color: var(--maincolor);
+}
+
+.inhalt form {
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+}
+
+.inhalt textarea {
+    min-width: 800px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: white;
+}
+
+.inhalt input {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: white;
+}
+
+.inhalt .absenden {
+    font-size: 30px;
+    max-width: 200px;
+    color: orangered;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: white;
+}
+
+/* About Us */
+.rahmen {
+	width: 60%;
+	margin: auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.rahmen section {
+    margin: 30px;
+}
+
+.rahmen h2 {
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--textsecondary);
+    font-size: 65px;
+    text-decoration: none;
+}
+
+.rahmen h2 span {
+    color: var(--maincolor);
+}
+
+.rahmen p {
+    margin: 10px;
+    color: var(--textsecondary);
+}
+
+.rahmen img {
+    margin: auto;
+    width: calc(100% - 10px);
+    max-height: 600px;
+    border: 5px solid rgba(0, 0, 0, 0.5);
 }
