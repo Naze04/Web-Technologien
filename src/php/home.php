@@ -1,3 +1,4 @@
+<?php require 'session_start.php'; ?>
 <!DOCTYPE html>
 <html lang="de">
     <head>
@@ -12,40 +13,31 @@
 
         <div class="FlexImg">
             <section>
-                <a href="PLACEHOLDER.php">
-                    <img class="img" src="../assets/Ophone_banner.jpg" alt="Ophone">
-                </a>
+                <img class="img" src="../assets/Ophone_banner.jpg" alt="Ophone">
             </section>
             <section>
                 <h1>Das OPhone</h1>
-                <button onclick="location.href='shop.php'" class="orange" style="color: white;">Weitere Infos</button>
-                <button onclick="location.href='Ophone.php'" class="orange clearOrange">Kaufen</button>
+                <button onclick="location.href='oPhone.php'" class="orange" tabindex="2">Weitere Infos</button>
             </section>
         </div>
 
         <div class="FlexImg">
             <section>
-                <a href="PLACEHOLDER.php">
                 <img class="img" src="../assets/OWatch_banner.jpg" alt="OWatch">
-                </a>
             </section>
             <section>
                 <h1>Die OWatch</h1>
-                <button onclick="location.href='shop.php'" class="white">Weitere Infos</button>
-                <button onclick="location.href='Ophone.php'" class="white clearWhite">Kaufen</button>
+                <button onclick="location.href='oWatch.php'" class="white" tabindex="2">Weitere Infos</button>
             </section>
         </div>
 
         <div class="FlexImg">
             <section>
-                <a href="PLACEHOLDER.php">
                 <img class="img" src="../assets/Earthpod_banner.jpg" alt="Earthpods">
-                </a>
             </section>
             <section>
                 <h1>Die Earthpods</h1>
-                <button onclick="location.href='shop.php'" class="orange" style="color: white;">Weitere Infos</button>
-                <button onclick="location.href='Ophone.php'" class="orange clearOrange">Kaufen</button>
+                <button onclick="location.href='earthPods.php'" class="orange" tabindex="2">Weitere Infos</button>
             </section>
         </div>
 

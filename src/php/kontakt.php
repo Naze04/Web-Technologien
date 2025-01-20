@@ -13,16 +13,16 @@
             <h2>Kontakt<span class="Uberschrifthalfte">formular</span></h2>
             <form action="home.php">
                 <label for="name">Name</label><br>
-                <input type="text" id="name" name="name" value=""><br><br>
+                <input type="text" id="name" name="name" value="" tabindex="2"><br><br>
                 <label for="vname">Vorname</label><br>
-                <input type="text" id="vname" name="vname" value=""><br><br>
+                <input type="text" id="vname" name="vname" value="" tabindex="2"><br><br>
                 <label for="email">E-Mail</label><br>
-                <input type="text" id="email" name="email" value=""><br><br>
+                <input type="text" id="email" name="email" value="" tabindex="2"><br><br>
                 <label for="telefon">Telefon</label><br>
-                <input type="text" id="telefon" name="telefon" value=""><br><br>
+                <input type="text" id="telefon" name="telefon" value="" tabindex="2"><br><br>
                 <label for="nachricht">Ihre Nachricht</label><br>
-                <textarea rows="8" name="nachricht" required></textarea><br><br>
-                <input type="submit" value="Absenden" class="absenden">
+                <textarea rows="8" name="nachricht" required tabindex="2"></textarea><br><br>
+                <input type="submit" value="Absenden" class="absenden" tabindex="2">
             </form> 
             <p>Nach Absenden des Kontaktformulars gelangen Sie auf wieder auf die Homepage.</p>
         </div>
