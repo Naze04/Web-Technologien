@@ -407,35 +407,35 @@ footer table td a {
     display: inline-flex;
 }
 
-.product left, .product left right {
+.product .left, .product .left {
     padding: 20px;
     margin: auto;
 }
 
-.product left {
+.product .left {
     min-width: 600px;
     max-width: calc(100% - 400px);
 }
 
-.product left img {
+.product .left img {
     height: auto;
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.product right {
+.product .right {
     font-size: 12px;
     width: 400px;
     text-align: center;
 }
 
 
-.product right h1 {
+.product .right h1 {
     margin: 20px;
 }
 
-.product right section {
+.product .right section {
     padding: 20px;
     display: flex;
     border: 1px solid black;
@@ -444,16 +444,16 @@ footer table td a {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.product right section div, .product right section p {
+.product .right section div, .product .right section p {
     margin: auto;
     width: 50%;
 }
 
-.product right section div {
+.product .right section div {
     text-align: left;
 }
 
-.product right section p {
+.product .right section p {
     text-align: right;
 }
 
