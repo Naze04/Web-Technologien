@@ -1,13 +1,20 @@
+html {
+    height: 100%;
+}
+
 body {
     margin: 0px;
     height: auto;
     font-family: Arial;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
     
     --maincolor: #ff6600;
     --maincolorvariation: #bd4d03;
 
-    --secondarycolor: black;
-    --secondarycolorvariation: black;
+    --secondarycolor: white;
+    --secondarycolorvariation: #ebeaea;
 
     --background: white;
     --backgroundvariation: lightgray;
@@ -29,10 +36,6 @@ body {
     margin: 0;
 }
 
-.txtaligncenter {
-    text-align: center;
-}
-
 .textmainvariation {
     color: var(--textmainvariation);
 }
@@ -42,13 +45,17 @@ body {
 }
 
 /* /navleiste */
-.navlogo {
-    height: 63px;
-}
-
 nav {
     width: 100%;
     display: flex;
+
+    img {
+        height: 63px;
+    }
+}
+
+nav img {
+    height: 63px;
 }
 
 .navmenu {
@@ -58,60 +65,59 @@ nav {
     width: 100%;
     
     background: var(--nav);
-
-    a {
-        background: var(--nav);
-        color: var(--textmain);
-        text-decoration: none;
-        font-size: 14px;
-        display: block;
-
-        &:hover {
-            background-color: var(--navvariation);
-        }
-    }
-
-    h4 {
-        padding: 25px;
-    }
-
-    h5 {
-        padding: 10px;
-    }
-    
-    li {
-        display: block;
-        position: relative;
-    }
-
-    li:hover .dropdown {
-        clip: auto;
-        opacity: 1;
-        transform: scaleY(1);
-    }
-
-    .left {
-        margin-right: auto;
-    }
-
-    .right {
-        margin-left: auto;
-    }
 }
 
-.dropdown, #logindropdown, #profiledropdown {
+.navmenu a {
+    background: var(--nav);
+    color: var(--textmain);
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+}
+
+.navmenu a:hover {
+    background-color: var(--navvariation);
+}
+
+.navmenu h4 {
+    padding: 25px;
+}
+
+.navmenu h5 {
+    padding: 10px;
+}
+
+.navmenu li {
+    display: block;
+    position: relative;
+}
+
+.navmenu li:hover #dropdown {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.navmenu .left {
+    margin-right: auto;
+}
+
+.navmenu .right {
+    margin-left: auto;
+}
+
+
+#dropdown, #logindropdown, #profiledropdown {
     list-style: none;
     position: fixed;
     z-index: 999;
 
-    clip: auto;
     opacity: 0;
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1), opacity 0.2s cubic-bezier(0.2, 0, 0.2, 1);
 }
 
-.dropdown {
+#dropdown {
     left: 0;
     width: 100vw;
 }
@@ -120,58 +126,54 @@ nav {
     right: 0;
     width: 300px;
     background-color: var(--nav);
+}
 
-    input[type=text], input[type=password] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-    }
+#logindropdown input[type=text], #profiledropdown input[type=text], #logindropdown input[type=password], #profiledropdown input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
 
-    button {
-        background-color: var(--maincolor);
-        color: var(--textsecondary);
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-    
-        &:hover {
-            background-color: var(--maincolorvariation);
-        }
-    }
+#logindropdown button, #profiledropdown button {
+    background-color: var(--maincolor);
+    color: var(--textsecondary);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
 
-    /* Avatar image */
-    img {
-        width: 80px;
-        border-radius: 50%;
-    }
-    
-    /* Center the avatar image inside this container */
-    .imgcontainer {
-        text-align: center;
-        margin: 24px 0 12px 0;
-    }
+#logindropdown button:hover, #profiledropdown button:hover {
+    background-color: var(--maincolorvariation);
+}
 
-    /* Add padding to containers */
-    .logincontainer {
-        padding: 16px;
-    }
+#logindropdown img, #profiledropdown img {
+    width: 80px;
+    border-radius: 50%;
+}
 
-    /* The "Forgot password" text */
-    span {
-        text-align: center;
-        margin: 24px 0 12px 0;
-    }
+#logindropdown .imgcontainer, #profiledropdown .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+#logindropdown .logincontainer, #profiledropdown .logincontainer {
+    padding: 16px;
+}
+
+#logindropdown span, #profiledropdown span {
+    text-align: center;
+    margin: 24px 0 12px 0;
 }
 
 
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
+/*@media screen and (max-width: 300px) {
     span.psw {
         display: block;
         float: none;
@@ -179,31 +181,35 @@ nav {
     .cancelbtn {
         width: 100%;
     }
-} 
+}*/
 
 /* /footer */
+.spacer {
+    flex: 1 0 auto;
+}
+
 footer { 
     color: var(--textsecondary); 
 	background: var(--footer);
-	height: 325px;
+    margin-top: auto;
 	width: 100%;
     font-family: Arial;
 	text-decoration: none;
 }
 
-.footerTable {
-	margin: auto;
+footer table {
+    margin: auto;
 }
 
-.fTHead {
-	width: 250px;
-	height: 50px;
-	text-align: center;
+footer table td {
+    width: 250px;
+    height: 50px;
+    text-align: center;
 }
 
-.footerLink {
+footer table td a {
     text-decoration: none;
-	color: var(--textsecondary);
+    color: var(--textsecondary);
 }
 
 /* /homeseite */
@@ -221,20 +227,22 @@ footer {
     display: flex;
     justify-content: center;
     position: relative;
+}
 
-    section {
-        position: absolute;
-        text-align: center;
-    }
 
-    h1 {
-        color: var(--textmain);
-        padding: 20px
-    }
 
-    img {
-        width: 100%;
-    }
+.FlexImg section {
+    position: absolute;
+    text-align: center;
+}
+
+.FlexImg h1 {
+    color: var(--textmain);
+    padding: 20px
+}
+
+.FlexImg img {
+    width: 100%;
 }
 
 
@@ -249,38 +257,33 @@ footer {
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 25px;
+    
+    color: var(--textmain);
 }
 
 .orange {
-    border-color: var(--maincolor);
     background-color: var(--maincolor);
+    border-color: var(--maincolor);
+}
 
-    &:hover {
-        background-color: var(--maincolor);
-        border-color: var(--maincolor);
-        color: var(--textsecondary);
-    }
+.orange:hover {
+    background-color: var(--maincolorvariation);
+    border-color: var(--maincolorvariation);
 }
 
 .white {
-    border-color: white;
-    background-color: white;
-
-    &:hover {
-        background-color: #ebeaea;
-        border-color: white;
-        color: var(--textmain);
-    }
+    background-color: var(--secondarycolor);
+    border-color: var(--secondarycolor);
 }
 
-.clearWhite {
-    background-color: rgba(0,0,0,0);
-    color: var(--textsecondary);
+.white:hover {
+    background-color: var(--secondarycolorvariation);
+    border-color: var(--secondarycolorvariation);
+    color: var(--textmain);
 }
 
-.clearOrange {
+.clearWhite, .clearOrange {
     background-color: rgba(0,0,0,0);
-    color: var(--maincolor);
 }
 
 .parent {
@@ -324,19 +327,19 @@ footer {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+}
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-    }
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
 
-    &:hover {
-        transform: scale(1.1);
-        box-shadow: 8px 8px 8px grey;
-        transition: 0.5s;
-    }
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 8px 8px 8px grey;
+    transition: 0.5s;
 }
   
 /* Buttons */
@@ -384,17 +387,17 @@ footer {
     text-align: center;
     width: 300px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-    h2 {
-        font-size: 18px;
-        margin: 10px 0;
-    }
+.shop-item h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
 
-    p {
-        font-size: 14px;
-        color: #555;
-        margin: 10px 0;
-    }
+.shop-item p {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
 }
 
 .shop-img {
@@ -406,78 +409,79 @@ footer {
 /*Produktseite*/
 .product {
     display: inline-flex;
-    
-    left, right {
-        padding: 20px;
-        margin: auto;
-    }
+}
 
-    left {
-        min-width: 600px;
-        max-width: calc(100% - 400px);
+.product left, .product left right {
+    padding: 20px;
+    margin: auto;
+}
 
-        img {
-            height: auto;
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-    }
-    
-    right {
-        font-size: 12px;
-        width: 400px;
-        text-align: center;
+.product left {
+    min-width: 600px;
+    max-width: calc(100% - 400px);
+}
 
-        h1 {
-            margin: 20px;
-        }
+.product left img {
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-        section {
-            padding: 20px;
-            display: flex;
-            border: 1px solid black;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            
-            div, p {
-                margin: auto;
-                width: 50%;
-            }
-        
-            div {
-                text-align: left;
-            }
-        
-            p {
-                text-align: right;
-            }
-        }
-    }
+.product right {
+    font-size: 12px;
+    width: 400px;
+    text-align: center;
+}
+
+
+.product right h1 {
+    margin: 20px;
+}
+
+.product right section {
+    padding: 20px;
+    display: flex;
+    border: 1px solid black;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product right section div, .product right section p {
+    margin: auto;
+    width: 50%;
+}
+
+.product right section div {
+    text-align: left;
+}
+
+.product right section p {
+    text-align: right;
 }
 
 .information {
     padding: 20px;
     text-align: center;
+}
 
-    table {
-        font-family: Arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 20px;
-    
-        th, td {
-            color: var(--textmain);
-            border: 1px solid gray;
-            text-align: left;
-            padding: 8px;
-        }
-    
-        th {
-            background-color: var(--background);
-        }
-    }
+.information table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.information table th, .information table td {
+    color: var(--textmain);
+    border: 1px solid gray;
+    text-align: left;
+    padding: 8px;
+}
+
+.information table th {
+    background-color: var(--background);
 }
 
 /* Checkout */
@@ -489,46 +493,46 @@ footer {
     background: var(--background);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-    /* Header */
-    h1 {
-        text-align: center;
-        color: var(--maincolor);
-    }
+/* Header */
+.container h1 {
+    text-align: center;
+    color: var(--maincolor);
 }
 
 /* Formular-Styles */
 #checkoutForm {
     display: flex;
     flex-direction: column;
+}
 
-    label {
-        margin-top: 15px;
-        font-weight: bold;
-    }
+#checkoutForm label {
+    margin-top: 15px;
+    font-weight: bold;
+}
 
-    input, select {
-        margin-top: 5px;
-        padding: 10px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-    
-    button {
-        margin-top: 20px;
-        padding: 15px;
-        font-size: 18px;
-        background-color: var(--maincolor);
-        color: var(--textsecondary);
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
+#checkoutForm input, #checkoutForm select {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
-        &:hover {
-            background-color: var(--maincolorvariation);
-        }
-    }
+#checkoutForm button {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 18px;
+    background-color: var(--maincolor);
+    color: var(--textsecondary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#checkoutForm button:hover {
+    background-color: var(--maincolorvariation);
 }
 
 /* Zusammenfassungs-Sektion */
@@ -537,16 +541,15 @@ footer {
     padding: 15px;
     background: #f1f1f1;
     border-radius: 4px;
+}
 
-    h2 {
-        margin-top: 0;
-    }
+.order-summary h2 {
+    margin-top: 0;
+}
 
-    p {
-        margin: 5px 0;
-        font-size: 16px;
-    }
-    
+.order-summary p {
+    margin: 5px 0;
+    font-size: 16px;
 }
 
 /* Warenkorb */
@@ -557,53 +560,53 @@ footer {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
-    
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-    
-        th {
-            background-color: #f2f2f2;
-            color: black;
-            font-weight: bold;
-        }
-    
-        td button {
-            background-color: var(--maincolor);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 5px 10px;
-            cursor: pointer;
-        
-            &:hover {
-                background-color: var(--maincolorvariation);
-            }
-        }
-    }
+.cart table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.cart table th, .cart table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.cart table th {
+    background-color: #f2f2f2;
+    color: black;
+    font-weight: bold;
+}
+
+.cart table td button {
+    background-color: var(--maincolor);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.cart table td button:hover {
+    background-color: var(--maincolorvariation);
 }
 
 #cartTotal {
     margin-top: 20px;
     text-align: right;
+}
 
-    h3 {
-        margin: 0;
-        font-size: 18px;
-        color: #333;
-    }
+#cartTotal h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
 }
 
 
 /* Mobile Responsive Design */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     .container, .cart {
         padding: 15px;
     }
@@ -620,7 +623,7 @@ footer {
     .cart table th, .cart table td {
         font-size: 14px;
     }
-}
+}*/
 
 /* FAQ */
 .inhalt {
@@ -629,55 +632,55 @@ footer {
     background: rgba(0, 0, 0, 0.5);
 	padding-bottom: 20px;
 	color: var(--textsecondary);
+}
 
     
-    h2 {
-    	background: rgba(0, 0, 0, 0.5);
-    	font-size: 65px;
-        text-align: center;
-        padding-top: 20px;
-        margin: auto;
-    }
+.inhalt h2 {
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 65px;
+    text-align: center;
+    padding-top: 20px;
+    margin: auto;
+}
 
-    h3 {
-        font-size: 30px;
-        margin-left: 50px;
-    }
+.inhalt h3 {
+    font-size: 30px;
+    margin-left: 50px;
+}
 
-    p {
-        margin-left: 100px;
-        margin-bottom: 15px;
-    }
-    
-    span {
-        color: var(--maincolor);
-    }
+.inhalt p {
+    margin-left: 100px;
+    margin-bottom: 15px;
+}
 
-    form {
-        padding-top: 20px;
-        padding-left: 50px;
-        padding-bottom: 30px;
-    }
-    
-    textarea {
-        min-width: 800px;
-        background-color: rgba(255, 255, 255, 0.9);
-        border-color: white;
-    }
-    
-    input {
-        width: 400px;
-        background-color: rgba(255, 255, 255, 0.9);
-        border-color: white;
-    }
-    
-    .absenden {
-        font-size: 30px;
-        max-width: 200px;
-        color: orangered;
-        background-color: rgba(0, 0, 0, 0.5);
-        border-color: white;
-    }
+.inhalt span {
+    color: var(--maincolor);
+}
+
+.inhalt form {
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+}
+
+.inhalt textarea {
+    min-width: 800px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: white;
+}
+
+.inhalt input {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: white;
+}
+
+.inhalt .absenden {
+    font-size: 30px;
+    max-width: 200px;
+    color: orangered;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: white;
 }
 
 /* About Us */
@@ -685,30 +688,31 @@ footer {
 	width: 60%;
 	margin: auto;
     background: rgba(0, 0, 0, 0.5);
+}
 
-    section {
-        margin: 30px;
-    }
+.rahmen section {
+    margin: 30px;
+}
 
-    h2 {
-        background: rgba(0, 0, 0, 0.5);
-        color: var(--textsecondary);
-        font-size: 65px;
-        text-decoration: none;
+.rahmen h2 {
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--textsecondary);
+    font-size: 65px;
+    text-decoration: none;
+}
 
-        span {
-            color: var(--maincolor);
-        }
-    }
+.rahmen h2 span {
+    color: var(--maincolor);
+}
 
-    p {
-        color: var(--textsecondary);
-    }
+.rahmen p {
+    margin: 10px;
+    color: var(--textsecondary);
+}
 
-    img {
-        margin: 30px;
-        height: auto;
-        vertical-align: middle;
-        border-color: rgba(0, 0, 0, 0.5);
-    }
+.rahmen img {
+    margin: auto;
+    width: calc(100% - 10px);
+    max-height: 600px;
+    border: 5px solid rgba(0, 0, 0, 0.5);
 }

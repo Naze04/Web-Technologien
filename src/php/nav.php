@@ -1,6 +1,6 @@
 <nav>
     <ul class="navmenu">
-        <li><a href="home.php" tabindex="1"><img alt="Logo" src=../assets/orange_logo.png class="navlogo"></a></li>
+        <li><a href="home.php" tabindex="1"><img alt="Orange Logo" src=../assets/orange_logo.png></a></li>
         <li class="left">
             <a href="shop.php" tabindex="1"><h4>Shop</h4></a>
             <ul class="dropdown">
@@ -9,7 +9,7 @@
                 <li><a href="earthPods.php" tabindex="1"><h5>EarthPods</h5></a></li>
             </ul>
         </li>
-        <li class="right"><a href="cart.php" tabindex="1"><img alt="Logo" src=../assets/cart.png class="navlogo"></a></li>
+        <li class="right"><a href="cart.php" tabindex="1"><img alt="Warenkorb" src=../assets/cart.png></a></li>
         <li>
             <a onclick="onLoginClick()"><h4>Login</h4></a>
             <ul id="logindropdown">

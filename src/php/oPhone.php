@@ -4,7 +4,7 @@
         <title>Orange Inc product Html</title>
         <meta charset="UTF-8">
 	    <link rel="stylesheet" href="../css/style.css">
-        <script type="text/javascript" src="../js/script.js"></script>
+        <script src="../js/script.js"></script>
     </head>
     <body>
         <!--Nav Bar-->
@@ -14,11 +14,11 @@
         <h3 class="maincolor">Neu</h3>
         <h1>OPhone 16 Pro kaufen</h1>
         <div class="product">
-            <left>
+            <div class="left">
                 <img class="roundimg" src="../assets/OphonePro.jpg" alt="O-Phone">
-            </left>
+            </div>
             <!--Product description-->
-            <right>
+            <div class="right">
                 <h1>Modell. <span class="textmainvariation">Welches ist das richtige Modell für dich?</span></h1>
                 <!--Product selection-->
                 <section>
