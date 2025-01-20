@@ -42,7 +42,7 @@ require 'session_start.php';
                             Preis: <?php echo number_format($item['price'], 2, ',', '.') . '€'; ?>
                             <form action="cart.php" method="POST" style="display:inline;">
                                 <input type="hidden" name="product_id" value="<?php echo $item['product_id']; ?>">
-                        </form>  </form>
+                            </form>
                         </li>
                     <?php endforeach; ?>
                 </ul>
@@ -56,7 +56,7 @@ require 'session_start.php';
                     </strong>
                 </p>
             <?php else: ?>
-            <div>Ihr Warenkorb ist leer.</div>
+                <p>Ihr Warenkorb ist leer.</p>
             <?php endif; ?>
 
             <button onclick="location.href='cart.php'" tabindex="2">Zurück zum Warenkorb</button>
